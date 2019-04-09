@@ -1,4 +1,7 @@
 # tamakonchi
+
+[![Greenkeeper badge](https://badges.greenkeeper.io/omoushi/tamakonchi.svg)](https://greenkeeper.io/)
+
 たまごっちみたいなアプリ作ってみる。
 
 # Setup Local Develop Environment
