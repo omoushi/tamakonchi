@@ -4,5 +4,4 @@ node_js:
 
 jobs:
   include:
-    - stage: test
-      script: echo 'If installing and testing has done, it is OK.'
+    - stage: no-specified
