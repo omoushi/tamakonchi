@@ -12,8 +12,9 @@ jobs:
       before_install:
         - nvm install 10.15.3
         - gem install bundler
+      install:
+        - yarn
         - cd android/ && bundle install
-      install: yarn
       script: bundle exec fastlane beta
 
 stages:
