@@ -10,8 +10,8 @@
 #     https://docs.fastlane.tools/plugins/available-plugins
 #
 
-# For Travis
-setup_travis
+# For Travis. But this is needed in osx.
+# setup_travis
 
 # Uncomment the line if you want fastlane to automatically update itself
 # update_fastlane
