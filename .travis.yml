@@ -9,8 +9,10 @@ jobs:
       name: "deploy"
       language: android
       jdk: oraclejdk8
-      node_js: "10"
-      script: echo 'This step is Deploy!'
+      before_install:
+        - gem install bundler
+        - cd android/ && bundle install
+      script: fastlane beta
 
 stages:
   - name: "test"
