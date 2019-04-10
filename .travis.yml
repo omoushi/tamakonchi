@@ -9,9 +9,10 @@ jobs:
       name: "deploy"
       language: android
       jdk: oraclejdk8
-      components:
-        - build-tools-28.0.3
-        - android-28
+      android:
+        components:
+          - build-tools-28.0.3
+          - android-28
       before_install:
         - nvm install 10.15.3
         - gem install bundler
