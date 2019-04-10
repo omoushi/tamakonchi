@@ -1,17 +1,17 @@
-language: node_js
-node_js:
-  - "10"
-
 jobs:
   include:
     - stage: test
       name: "test"
+      language: node_js
+      node_js: "10"
       script: yarn test
-    - stage: deploy
+    - stage: deploy android
       name: "deploy"
+      language: android
+      jdk: oraclejdk8
+      node_js: "10"
       script: echo 'This step is Deploy!'
 
 stages:
   - name: "test"
-  - name: "deploy"
-    if: branch = master
+  - name: "deploy android"
