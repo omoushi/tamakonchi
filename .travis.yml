@@ -1,3 +1,17 @@
 language: node_js
 node_js:
   - "10"
+
+jobs:
+  include:
+    - stage: test
+      name: "test"
+      script: yarn test
+    - stage: deploy
+      name: "deploy"
+      script: echo 'This step is Deploy!'
+
+stages:
+  - name: "test"
+  - name: "deploy"
+    if: branch = master
