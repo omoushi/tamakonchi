@@ -38,7 +38,17 @@ Error: ENOENT: no such file or directory, lstat ...
 So If you execute `run-ios` again and reload iPhone Simulator, you can see 'Welcome' screen. 
  
 
-### For Android（TODO）
+### For Android
+You should do some process before start up android.
+What you should do is below section in [React-Native's Getting Started](https://facebook.github.io/react-native/docs/getting-started).  
+
+- React Native CLI Quickstart tab
+    - Installing dependencies
+        - Java Development Kit
+        - Android development environment
+    - Preparing the Android device
+
+You need to launch AVD emulator before run app. Then, start up it. 
 ```bash
 yarn -s run react-native run-android 
 ```
