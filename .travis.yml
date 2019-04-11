@@ -14,7 +14,7 @@ jobs:
           - build-tools-28.0.3
           - android-28
       before_install:
-        - openssl aes-256-cbc -K $encrypted_1a3d6bf2fa49_key -iv $encrypted_1a3d6bf2fa49_iv -in ./android/app/tamakonchi.keystore.enc -out ./android/app/tamakonchi.keystore -d
+        - openssl aes-256-cbc -K $encrypted_1a3d6bf2fa49_key -iv $encrypted_1a3d6bf2fa49_iv -in ./android/tamakonchi.keystore.enc -out ./android/tamakonchi.keystore -d
         - nvm install 10.15.3
         - gem install bundler
       install:
