@@ -26,7 +26,7 @@ lane :beta do
   build_android_app(
     task: "assembleRelease",
     properties: {
-      "android.injected.signing.store.file" => "app/tamakonchi.keystore",
+      "android.injected.signing.store.file" => "tamakonchi.keystore",
       "android.injected.signing.store.password" => ENV["TAMAKONCHI_RELEASE_STORE_PASSWORD"],
       "android.injected.signing.key.alias" => "tamakonchi-key-alias",
       "android.injected.signing.key.password" => ENV["TAMAKONCHI_RELEASE_STORE_PASSWORD"],
