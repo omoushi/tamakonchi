@@ -24,13 +24,7 @@ default_platform :android
 lane :beta do
   # build the release variant
   build_android_app(
-    task: "assembleRelease",
-    properties: {
-      "android.injected.signing.store.file" => "tamakonchi.keystore",
-      "android.injected.signing.store.password" => ENV["TAMAKONCHI_RELEASE_STORE_PASSWORD"],
-      "android.injected.signing.key.alias" => "tamakonchi-key-alias",
-      "android.injected.signing.key.password" => ENV["TAMAKONCHI_RELEASE_STORE_PASSWORD"],
-    }
+    task: "assembleRelease"
   )
 
   # upload to Beta by Crashlytics
