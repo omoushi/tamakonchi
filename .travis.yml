@@ -1,12 +1,13 @@
 jobs:
   include:
-#    - stage: test
-#      name: "test"
-#      language: node_js
-#      node_js: "10"
-#      script: yarn test
+    - stage: test
+      name: "test"
+      language: node_js
+      node_js: "10"
+      script: yarn test
     - stage: deploy android
       name: "deploy"
+      if: branch = master
       language: android
       jdk: oraclejdk8
       android:
