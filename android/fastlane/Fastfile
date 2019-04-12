@@ -33,7 +33,5 @@ lane :beta do
     build_secret: "fce3441152116bb6ddff6ffd3e6e2d9f0d87732c47788a90d728cc83ff3f125e"
   )
 
-  # slack(
-  #   slack_url: "https://hooks.slack.com/services/IDS"
-  # )
+  slack(message: "Beta App successfully released!")
 end
