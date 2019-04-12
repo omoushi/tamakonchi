@@ -7,7 +7,9 @@ jobs:
       script: yarn test
     - stage: deploy android
       name: "deploy"
-      if: branch = master
+      if:
+        - branch = master
+        - type = push
       language: android
       jdk: oraclejdk8
       android:
