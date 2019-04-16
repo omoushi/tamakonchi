@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "647388131809",
+    "firebase_url": "https://tamakonchi.firebaseio.com",
+    "project_id": "tamakonchi",
+    "storage_bucket": "tamakonchi.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:647388131809:android:3bcf1aa3db6b810c",
+        "android_client_info": {
+          "package_name": "com.tamakonchi"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "647388131809-0hbgqbjheph56ir4jrrcurp7cftjv2t1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD1Ppg3RWskjIKP1Z84bJOQjMw5cxanwas"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "647388131809-0hbgqbjheph56ir4jrrcurp7cftjv2t1.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

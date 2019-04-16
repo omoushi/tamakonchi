@@ -1,17 +1,28 @@
-language: node_js
-node_js:
-  - "10"
-
 jobs:
   include:
     - stage: test
       name: "test"
+      language: node_js
+      node_js: "10"
       script: yarn test
-    - stage: deploy
+    - stage: deploy android
       name: "deploy"
-      script: echo 'This step is Deploy!'
+      if: branch = master AND type = push
+      language: android
+      jdk: oraclejdk8
+      android:
+        components:
+          - build-tools-28.0.3
+          - android-28
+      before_install:
+        - openssl aes-256-cbc -K $encrypted_7e1d24f25d9e_key -iv $encrypted_7e1d24f25d9e_iv -in ./android/app/tamakonchi.keystore.enc -out ./android/app/tamakonchi.keystore -d
+        - nvm install 10.15.3
+        - gem install bundler
+      install:
+        - yarn
+        - cd android/ && bundle install
+      script: bundle exec fastlane beta
 
 stages:
   - name: "test"
-  - name: "deploy"
-    if: branch = master
+  - name: "deploy android"
