@@ -1,0 +1,127 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`notTakeCare 健康が変わる場合 state: {"status":"いきてる","health":"不健康"} 1`] = `
+Object {
+  "health": "不健康",
+  "status": "いきてる",
+}
+`;
+
+exports[`notTakeCare 健康が変わる場合 state: {"status":"いきてる","health":"健康"} 1`] = `
+Object {
+  "health": "不健康",
+  "status": "いきてる",
+}
+`;
+
+exports[`notTakeCare 健康が変わる場合 state: {"status":"しんでる","health":"不明"} 1`] = `
+Object {
+  "health": "不明",
+  "status": "しんでる",
+}
+`;
+
+exports[`notTakeCare 健康が変わる場合 state: {"status":"たまご","health":"不健康"} 1`] = `
+Object {
+  "health": "不健康",
+  "status": "たまご",
+}
+`;
+
+exports[`notTakeCare 健康が変わる場合 state: {"status":"たまご","health":"健康"} 1`] = `
+Object {
+  "health": "不健康",
+  "status": "たまご",
+}
+`;
+
+exports[`notTakeCare 健康が変わる場合 state: undefined 1`] = `
+Object {
+  "health": "不健康",
+  "status": "たまご",
+}
+`;
+
+exports[`notTakeCare 状態が変わる場合 state: {"status":"いきてる","health":"不健康"} 1`] = `
+Object {
+  "health": "不健康",
+  "status": "いきてる",
+}
+`;
+
+exports[`notTakeCare 状態が変わる場合 state: {"status":"いきてる","health":"健康"} 1`] = `
+Object {
+  "health": "不健康",
+  "status": "いきてる",
+}
+`;
+
+exports[`notTakeCare 状態が変わる場合 state: {"status":"しんでる","health":"不明"} 1`] = `
+Object {
+  "health": "不明",
+  "status": "しんでる",
+}
+`;
+
+exports[`notTakeCare 状態が変わる場合 state: {"status":"たまご","health":"不健康"} 1`] = `
+Object {
+  "health": "不健康",
+  "status": "たまご",
+}
+`;
+
+exports[`notTakeCare 状態が変わる場合 state: {"status":"たまご","health":"健康"} 1`] = `
+Object {
+  "health": "不健康",
+  "status": "たまご",
+}
+`;
+
+exports[`notTakeCare 状態が変わる場合 state: undefined 1`] = `
+Object {
+  "health": "不健康",
+  "status": "たまご",
+}
+`;
+
+exports[`takeCare state: {"status":"いきてる","health":"不健康"} 1`] = `
+Object {
+  "health": "不健康",
+  "status": "いきてる",
+}
+`;
+
+exports[`takeCare state: {"status":"いきてる","health":"健康"} 1`] = `
+Object {
+  "health": "健康",
+  "status": "いきてる",
+}
+`;
+
+exports[`takeCare state: {"status":"しんでる","health":"不明"} 1`] = `
+Object {
+  "health": "不明",
+  "status": "しんでる",
+}
+`;
+
+exports[`takeCare state: {"status":"たまご","health":"不健康"} 1`] = `
+Object {
+  "health": "不健康",
+  "status": "いきてる",
+}
+`;
+
+exports[`takeCare state: {"status":"たまご","health":"健康"} 1`] = `
+Object {
+  "health": "健康",
+  "status": "いきてる",
+}
+`;
+
+exports[`takeCare state: undefined 1`] = `
+Object {
+  "health": "健康",
+  "status": "いきてる",
+}
+`;

@@ -2,11 +2,12 @@ import React, {FC} from "react";
 import {Button, Text, View} from "react-native";
 import {Action, Dispatch, Reducer} from "redux";
 import {connect} from "react-redux";
+import {randomIn} from "./utils";
 
 type Props = State & Events
 type State = {
   status: 'たまご' | 'いきてる' | 'しんでる'
-  health: '健康' | '不健康'
+  health: '健康' | '不健康' | '不明'
 }
 type Events = {
   takeCare(): void
@@ -18,37 +19,40 @@ const initialState: State = {
   health: '健康'
 };
 
-export const reducer: Reducer = (state: State = initialState, action: Action) => {
+export enum Statuses {
+  STATUS, HEALTH
+}
+
+export const reducer: Reducer = (state: State = initialState, action: Action): State => {
   switch (action.type) {
     case 'TAKE_CARE':
       switch (state.status) {
         case 'たまご':
           return {...state, status: 'いきてる'};
         case 'いきてる':
-          return {...state, status: 'いきてる'};
         case 'しんでる':
-          return {...state, status: 'しんでる'};
         default:
           return {...state}
       }
     case 'NOT_TAKE_CARE':
-      if (Math.random() > 0.5) {
-        if (state.health === '健康') {
-          return {...state, health: '不健康'};
-        } else {
-          return {...state}
-        }
-      } else {
-        switch (state.status) {
-          case 'たまご':
-            return {...state, status: 'しんでる'};
-          case 'いきてる':
-            return {...state, status: 'しんでる'};
-          case "しんでる":
-            return {...state, status: 'しんでる'};
-          default:
+      switch (randomIn([Statuses.STATUS, Statuses.HEALTH])) {
+        case Statuses.STATUS:
+          switch (state.status) {
+            case 'たまご':
+            case 'いきてる':
+              return {...state, status: 'しんでる', health: '不明'};
+            case "しんでる":
+            default:
+              return {...state}
+          }
+        case Statuses.HEALTH:
+          if (state.health === '健康') {
+            return {...state, health: '不健康'};
+          } else {
             return {...state}
-        }
+          }
+        default:
+          return {...state}
       }
     default:
       return {...state}

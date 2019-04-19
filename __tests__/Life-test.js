@@ -1,19 +1,47 @@
-import {reducer} from "../src/Life";
+import {reducer, Statuses} from "../src/Life";
 import React from "react";
+import * as utils from '../src/utils';
 
-const takeCareAction = {type: 'TAKE_CARE'};
-const notTakeCareAction = {type: 'NOT_TAKE_CARE'};
-const egg = {status: 'たまご'};
-const living = {status: 'いきてる'};
-const died = {status: 'しんでる'};
+const statePatterns = [
+  undefined,
+  {status: 'たまご', health: '健康'},
+  {status: 'たまご', health: '不健康'},
+  {status: 'いきてる', health: '健康'},
+  {status: 'いきてる', health: '不健康'},
+  {status: 'しんでる', health: '不明'}
+];
 
-it('reducer', () => {
-  expect(reducer(undefined, takeCareAction)).toEqual({status: 'いきてる'});
-  expect(reducer(egg, takeCareAction)).toEqual({status: 'いきてる'});
-  expect(reducer(living, takeCareAction)).toEqual({status: 'いきてる'});
-  expect(reducer(died, takeCareAction)).toEqual({status: 'しんでる'});
-  expect(reducer(undefined, notTakeCareAction)).toEqual({status: 'しんでる'});
-  expect(reducer(egg, notTakeCareAction)).toEqual({status: 'しんでる'});
-  expect(reducer(living, notTakeCareAction)).toEqual({status: 'しんでる'});
-  expect(reducer(died, notTakeCareAction)).toEqual({status: 'しんでる'});
+describe('takeCare', () => {
+  const takeCareAction = {type: 'TAKE_CARE'};
+
+  statePatterns.forEach(state => {
+    it(`state: ${JSON.stringify(state)}`, () => {
+      expect(reducer(state, takeCareAction)).toMatchSnapshot()
+    });
+  });
+});
+
+describe('notTakeCare', () => {
+  const notTakeCareAction = {type: 'NOT_TAKE_CARE'};
+  jest.mock('../src/utils');
+
+  describe('状態が変わる場合', () => {
+    utils.randomIn = jest.fn(() => Statuses.STATUS);
+
+    statePatterns.forEach(state => {
+      it(`state: ${JSON.stringify(state)}`, () => {
+        expect(reducer(state, notTakeCareAction)).toMatchSnapshot()
+      });
+    });
+  });
+
+  describe('健康が変わる場合', () => {
+    utils.randomIn = jest.fn(() => Statuses.HEALTH);
+
+    statePatterns.forEach(state => {
+      it(`state: ${JSON.stringify(state)}`, () => {
+        expect(reducer(state, notTakeCareAction)).toMatchSnapshot()
+      });
+    });
+  });
 });
