@@ -15,7 +15,7 @@ type Events = {
 }
 
 export enum Statuses {
-  STATUS, HEALTH
+  STAGE, HEALTH
 }
 
 export enum Health {
@@ -42,22 +42,18 @@ const initialState: State = {
 export const reducer: Reducer = (state: State = initialState, action: Action): State => {
   switch (action.type) {
     case ActionType.TAKE_CARE:
-      switch (state.stage) {
-        case Stage.EGG:
-          return {...state, stage: Stage.LIVING};
-        case Stage.LIVING:
-        case Stage.DIED:
-        default:
-          return {...state}
+      if (state.stage === Stage.EGG) {
+        return {...state, stage: Stage.LIVING};
+      } else {
+        return {...state}
       }
     case ActionType.NOT_TAKE_CARE:
-      switch (randomIn([Statuses.STATUS, Statuses.HEALTH])) {
-        case Statuses.STATUS:
+      switch (randomIn([Statuses.STAGE, Statuses.HEALTH])) {
+        case Statuses.STAGE:
           switch (state.stage) {
             case Stage.EGG:
             case Stage.LIVING:
               return {...state, stage: Stage.DIED, health: Health.UNKNOWN};
-            case Stage.DIED:
             default:
               return {...state}
           }

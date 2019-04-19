@@ -23,7 +23,7 @@ describe('notTakeCare', () => {
   jest.mock('../src/utils');
 
   describe('状態が変わる場合', () => {
-    utils.randomIn = jest.fn(() => Statuses.STATUS);
+    utils.randomIn = jest.fn(() => Statuses.STAGE);
     statePatterns.forEach(state => {
       it(`state: ${JSON.stringify(state)}`, () => {
         expect(reducer(state, notTakeCare())).toMatchSnapshot()
