@@ -1,6 +1,6 @@
 import React, {FC} from "react";
 import {Button, Text, View} from "react-native";
-import {Action, Dispatch, Reducer} from "redux";
+import {Action, ActionCreator, Dispatch, Reducer} from "redux";
 import {connect} from "react-redux";
 import {randomIn} from "./utils";
 
@@ -26,15 +26,22 @@ export enum Stage {
   EGG = 'たまご', LIVING = 'いきてる', DIED = 'しんでる'
 }
 
+export enum ActionType {
+  TAKE_CARE = 'TAKE_CARE',
+  NOT_TAKE_CARE = 'NOT_TAKE_CARE'
+}
+
+export const takeCare: ActionCreator<Action> = () => ({type: ActionType.TAKE_CARE});
+export const notTakeCare: ActionCreator<Action> = () => ({type: ActionType.NOT_TAKE_CARE});
+
 const initialState: State = {
   stage: Stage.EGG,
   health: Health.GOOD
 };
 
-
 export const reducer: Reducer = (state: State = initialState, action: Action): State => {
   switch (action.type) {
-    case 'TAKE_CARE':
+    case ActionType.TAKE_CARE:
       switch (state.stage) {
         case Stage.EGG:
           return {...state, stage: Stage.LIVING};
@@ -43,7 +50,7 @@ export const reducer: Reducer = (state: State = initialState, action: Action): S
         default:
           return {...state}
       }
-    case 'NOT_TAKE_CARE':
+    case ActionType.NOT_TAKE_CARE:
       switch (randomIn([Statuses.STATUS, Statuses.HEALTH])) {
         case Statuses.STATUS:
           switch (state.stage) {
@@ -76,9 +83,10 @@ const Life: FC<Props> = props => (
     <Button title={'世話をしない'} onPress={props.notTakeCare}/>
   </View>
 );
+
 const mapStateToProps = (state: State) => state;
 const mapDispatchToProps = (dispatch: Dispatch): Events => ({
-  takeCare: () => dispatch({type: 'TAKE_CARE'}),
-  notTakeCare: () => dispatch({type: 'NOT_TAKE_CARE'})
+  takeCare: () => dispatch(takeCare()),
+  notTakeCare: () => dispatch(notTakeCare())
 });
 export default connect(mapStateToProps, mapDispatchToProps)(Life)
