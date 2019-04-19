@@ -1,14 +1,14 @@
-import {reducer, Statuses} from "../src/Life";
+import {Health, reducer, Stage, Statuses} from "../src/Life";
 import React from "react";
 import * as utils from '../src/utils';
 
 const statePatterns = [
   undefined,
-  {status: 'たまご', health: '健康'},
-  {status: 'たまご', health: '不健康'},
-  {status: 'いきてる', health: '健康'},
-  {status: 'いきてる', health: '不健康'},
-  {status: 'しんでる', health: '不明'}
+  {stage: Stage.EGG, health: Health.GOOD},
+  {stage: Stage.EGG, health: Health.BAD},
+  {stage: Stage.LIVING, health: Health.GOOD},
+  {stage: Stage.LIVING, health: Health.BAD},
+  {stage: Stage.DIED, health: Health.UNKNOWN}
 ];
 
 describe('takeCare', () => {
