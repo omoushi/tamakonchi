@@ -1,6 +1,6 @@
-import {Health, notTakeCare, reducer, Stage, Statuses, takeCare} from "../src/Main";
-import React from "react";
-import * as utils from '../src/utils';
+import {Health, reducer, Stage, Statuses} from "../../src/main/reducer";
+import {notTakeCare, takeCare} from "../../src/main/actions";
+import * as utils from "../../src/utils";
 
 const statePatterns = [
   undefined,
@@ -20,7 +20,7 @@ describe('takeCare', () => {
 });
 
 describe('notTakeCare', () => {
-  jest.mock('../src/utils');
+  jest.mock('../../src/utils');
 
   describe('状態が変わる場合', () => {
     utils.randomIn = jest.fn(() => Statuses.STAGE);

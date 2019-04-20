@@ -9,7 +9,8 @@ import React from "react";
 import {StyleSheet, View} from 'react-native';
 import {createStore} from "redux";
 import {Provider} from "react-redux";
-import Main, {reducer} from "./Main";
+import Main from "./Main";
+import {reducer} from "./main/reducer";
 
 const store = createStore(reducer);
 
