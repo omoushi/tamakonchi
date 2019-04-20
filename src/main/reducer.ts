@@ -21,33 +21,16 @@ const initialState: State = {
 };
 
 export const reducer: Reducer = (state: State = initialState, action: Action): State => {
-  switch (action.type) {
-    case ActionType.TAKE_CARE:
-      if (state.stage === Stage.EGG) {
-        return {...state, stage: Stage.LIVING};
-      } else {
-        return {...state}
-      }
-    case ActionType.NOT_TAKE_CARE:
-      switch (randomIn([Statuses.STAGE, Statuses.HEALTH])) {
-        case Statuses.STAGE:
-          switch (state.stage) {
-            case Stage.EGG:
-            case Stage.LIVING:
-              return {...state, stage: Stage.DIED, health: Health.UNKNOWN};
-            default:
-              return {...state}
-          }
-        case Statuses.HEALTH:
-          if (state.health === Health.GOOD) {
-            return {...state, health: Health.BAD};
-          } else {
-            return {...state}
-          }
-        default:
-          return {...state}
-      }
-    default:
-      return {...state}
+  let newState = {};
+  if (action.type === ActionType.TAKE_CARE) {
+    newState = state.stage === Stage.EGG ? {stage: Stage.LIVING} : {};
+  } else if (action.type === ActionType.NOT_TAKE_CARE) {
+    const changeTarget = randomIn([Statuses.STAGE, Statuses.HEALTH]);
+    if (changeTarget === Statuses.STAGE) {
+      newState = state.stage !== Stage.DIED ? {stage: Stage.DIED, health: Health.UNKNOWN} : {};
+    } else if (changeTarget === Statuses.HEALTH) {
+      newState = state.health === Health.GOOD ? {health: Health.BAD} : {};
+    }
   }
+  return {...state, ...newState};
 };
