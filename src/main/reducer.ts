@@ -24,17 +24,17 @@ const initialState: State = {
   health: Health.GOOD
 };
 
-export const reducer: Reducer = (state: State = initialState, action: Action): State => {
-  let newState = {};
-  if (action.type === ActionType.TAKE_CARE) {
-    newState = state.stage === Stage.EGG ? HATCHING : {};
-  } else if (action.type === ActionType.NOT_TAKE_CARE) {
-    const changeTarget = randomIn([Statuses.STAGE, Statuses.HEALTH]);
-    if (changeTarget === Statuses.STAGE) {
-      newState = state.stage !== Stage.DIED ? DIEING : {};
-    } else if (changeTarget === Statuses.HEALTH) {
-      newState = state.health === Health.GOOD ? SICKING : {};
+export const reducer: Reducer = (state: State = initialState, action: Action<ActionType>): State => {
+  const newState = {
+    [ActionType.TAKE_CARE]: () => (state.stage === Stage.EGG ? HATCHING : {}),
+    [ActionType.NOT_TAKE_CARE]: () => {
+      const changeTarget = randomIn([Statuses.STAGE, Statuses.HEALTH]);
+      if (changeTarget === Statuses.STAGE) {
+        return state.stage !== Stage.DIED ? DIEING : {};
+      } else if (changeTarget === Statuses.HEALTH) {
+        return state.health === Health.GOOD ? SICKING : {};
+      }
     }
-  }
+  }[action.type];
   return {...state, ...newState};
 };
