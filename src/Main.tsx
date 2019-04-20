@@ -71,7 +71,7 @@ export const reducer: Reducer = (state: State = initialState, action: Action): S
   }
 };
 
-const Life: FC<Props> = props => (
+const Main: FC<Props> = props => (
   <View>
     <Text>{props.stage}</Text>
     <Text>{props.health}</Text>
@@ -85,4 +85,4 @@ const mapDispatchToProps = (dispatch: Dispatch): Events => ({
   takeCare: () => dispatch(takeCare()),
   notTakeCare: () => dispatch(notTakeCare())
 });
-export default connect(mapStateToProps, mapDispatchToProps)(Life)
+export default connect(mapStateToProps, mapDispatchToProps)(Main)

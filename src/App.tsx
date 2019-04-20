@@ -9,7 +9,7 @@ import React from "react";
 import {StyleSheet, View} from 'react-native';
 import {createStore} from "redux";
 import {Provider} from "react-redux";
-import Life, {reducer} from "./Life";
+import Main, {reducer} from "./Main";
 
 const store = createStore(reducer);
 
@@ -18,7 +18,7 @@ export default class App extends React.Component<any> {
     return (
       <Provider store={store}>
         <View style={styles.container}>
-          <Life/>
+          <Main/>
         </View>
       </Provider>
     );

@@ -1,4 +1,4 @@
-import {Health, notTakeCare, reducer, Stage, Statuses, takeCare} from "../src/Life";
+import {Health, notTakeCare, reducer, Stage, Statuses, takeCare} from "../src/Main";
 import React from "react";
 import * as utils from '../src/utils';
 
