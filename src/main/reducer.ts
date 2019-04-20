@@ -25,7 +25,7 @@ const initialState: State = {
 };
 
 export const reducer: Reducer = (state: State = initialState, action: Action<ActionType>): State => {
-  const newState = {
+  const newStateFn = {
     [ActionType.TAKE_CARE]: () => (state.stage === Stage.EGG ? HATCHING : {}),
     [ActionType.NOT_TAKE_CARE]: () => {
       const changeTarget = randomIn([Statuses.STAGE, Statuses.HEALTH]);
@@ -36,5 +36,6 @@ export const reducer: Reducer = (state: State = initialState, action: Action<Act
       }
     }
   }[action.type];
+  const newState = newStateFn ? newStateFn() : {};
   return {...state, ...newState};
 };
