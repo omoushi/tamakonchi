@@ -19,23 +19,28 @@ const HATCHING: StateEvent = {stage: Stage.LIVING};
 const DIEING: StateEvent = {stage: Stage.DIED, health: Health.UNKNOWN};
 const SICKING: StateEvent = {health: Health.BAD};
 
+const takingCare = (state: State): StateEvent => (state.stage === Stage.EGG ? HATCHING : {});
+const notTakingCare = (state: State): StateEvent => {
+  const changeTarget: Statuses = randomIn([Statuses.STAGE, Statuses.HEALTH]);
+  if (changeTarget === Statuses.STAGE && state.stage !== Stage.DIED) {
+    return DIEING
+  } else if (changeTarget === Statuses.HEALTH && state.health === Health.GOOD) {
+    return SICKING
+  } else {
+    return {}
+  }
+};
+
 const initialState: State = {
   stage: Stage.EGG,
   health: Health.GOOD
 };
 
 export const reducer: Reducer = (state: State = initialState, action: Action<ActionType>): State => {
-  const newStateFn = {
-    [ActionType.TAKE_CARE]: () => (state.stage === Stage.EGG ? HATCHING : {}),
-    [ActionType.NOT_TAKE_CARE]: () => {
-      const changeTarget = randomIn([Statuses.STAGE, Statuses.HEALTH]);
-      if (changeTarget === Statuses.STAGE) {
-        return state.stage !== Stage.DIED ? DIEING : {};
-      } else if (changeTarget === Statuses.HEALTH) {
-        return state.health === Health.GOOD ? SICKING : {};
-      }
-    }
+  const stateEventCreator = {
+    [ActionType.TAKE_CARE]: takingCare,
+    [ActionType.NOT_TAKE_CARE]: notTakingCare
   }[action.type];
-  const newState = newStateFn ? newStateFn() : {};
-  return {...state, ...newState};
+  const stateEvent = stateEventCreator ? stateEventCreator(state) : {};
+  return {...state, ...stateEvent};
 };
