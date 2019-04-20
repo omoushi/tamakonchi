@@ -7,6 +7,11 @@ export type State = {
   health: Health
 }
 
+export type StateEvent = {
+  stage?: Stage
+  health?: Health
+}
+
 export type Events = {
   takeCare(): void
   notTakeCare(): void
