@@ -1,0 +1,127 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`notTakeCare 健康が変わる場合 state: {"stage":"いきてる","health":"不健康"} 1`] = `
+Object {
+  "health": "不健康",
+  "stage": "いきてる",
+}
+`;
+
+exports[`notTakeCare 健康が変わる場合 state: {"stage":"いきてる","health":"健康"} 1`] = `
+Object {
+  "health": "不健康",
+  "stage": "いきてる",
+}
+`;
+
+exports[`notTakeCare 健康が変わる場合 state: {"stage":"しんでる","health":"不明"} 1`] = `
+Object {
+  "health": "不明",
+  "stage": "しんでる",
+}
+`;
+
+exports[`notTakeCare 健康が変わる場合 state: {"stage":"たまご","health":"不健康"} 1`] = `
+Object {
+  "health": "不健康",
+  "stage": "たまご",
+}
+`;
+
+exports[`notTakeCare 健康が変わる場合 state: {"stage":"たまご","health":"健康"} 1`] = `
+Object {
+  "health": "不健康",
+  "stage": "たまご",
+}
+`;
+
+exports[`notTakeCare 健康が変わる場合 state: undefined 1`] = `
+Object {
+  "health": "不健康",
+  "stage": "たまご",
+}
+`;
+
+exports[`notTakeCare 状態が変わる場合 state: {"stage":"いきてる","health":"不健康"} 1`] = `
+Object {
+  "health": "不健康",
+  "stage": "いきてる",
+}
+`;
+
+exports[`notTakeCare 状態が変わる場合 state: {"stage":"いきてる","health":"健康"} 1`] = `
+Object {
+  "health": "不健康",
+  "stage": "いきてる",
+}
+`;
+
+exports[`notTakeCare 状態が変わる場合 state: {"stage":"しんでる","health":"不明"} 1`] = `
+Object {
+  "health": "不明",
+  "stage": "しんでる",
+}
+`;
+
+exports[`notTakeCare 状態が変わる場合 state: {"stage":"たまご","health":"不健康"} 1`] = `
+Object {
+  "health": "不健康",
+  "stage": "たまご",
+}
+`;
+
+exports[`notTakeCare 状態が変わる場合 state: {"stage":"たまご","health":"健康"} 1`] = `
+Object {
+  "health": "不健康",
+  "stage": "たまご",
+}
+`;
+
+exports[`notTakeCare 状態が変わる場合 state: undefined 1`] = `
+Object {
+  "health": "不健康",
+  "stage": "たまご",
+}
+`;
+
+exports[`takeCare state: {"stage":"いきてる","health":"不健康"} 1`] = `
+Object {
+  "health": "不健康",
+  "stage": "いきてる",
+}
+`;
+
+exports[`takeCare state: {"stage":"いきてる","health":"健康"} 1`] = `
+Object {
+  "health": "健康",
+  "stage": "いきてる",
+}
+`;
+
+exports[`takeCare state: {"stage":"しんでる","health":"不明"} 1`] = `
+Object {
+  "health": "不明",
+  "stage": "しんでる",
+}
+`;
+
+exports[`takeCare state: {"stage":"たまご","health":"不健康"} 1`] = `
+Object {
+  "health": "不健康",
+  "stage": "いきてる",
+}
+`;
+
+exports[`takeCare state: {"stage":"たまご","health":"健康"} 1`] = `
+Object {
+  "health": "健康",
+  "stage": "いきてる",
+}
+`;
+
+exports[`takeCare state: undefined 1`] = `
+Object {
+  "health": "健康",
+  "stage": "いきてる",
+}
+`;
