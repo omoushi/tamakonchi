@@ -6,27 +6,45 @@
  */
 
 import React from "react";
-import {StyleSheet, View} from 'react-native';
+import {StyleSheet, View, Text} from 'react-native';
+import {NativeRouter, Link, Route} from 'react-router-native';
 import {createStore} from "redux";
 import {Provider} from "react-redux";
 import Main from "./Main";
 import {reducer} from "./main/reducer";
+import Collection from "./Collection";
 
 const store = createStore(reducer);
 
 export default class App extends React.Component<any> {
   render() {
     return (
-      <Provider store={store}>
-        <View style={styles.container}>
-          <Main/>
-        </View>
-      </Provider>
+      <NativeRouter>
+        <Provider store={store}>
+          <View style={styles.container}>
+            <View style={styles.nav}>
+              <Link to="/">
+                <Text>Main</Text>
+              </Link>
+              <Link to="/collection">
+                <Text>Collection</Text>
+              </Link>
+            </View>
+
+            <Route exact path="/" component={Main} />
+            <Route path="/collections" component={Collection} />
+          </View>
+        </Provider>
+      </NativeRouter>
     );
   }
 }
 
 const styles = StyleSheet.create({
+  nav: {
+    flexDirection: "row",
+    justifyContent: "space-around"
+  },
   container: {
     flex: 1,
     justifyContent: 'center',
