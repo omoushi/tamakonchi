@@ -1,6 +1,10 @@
 import {Health, reducer, Stage, Statuses} from "../../src/main/reducer";
 import {notTakeCare, takeCare} from "../../src/main/actions";
-import * as utils from "../../src/utils";
+import {randomIn} from "../../src/utils";
+
+jest.mock('../../src/utils');
+const mockRandomIn = <jest.Mock<Statuses>>randomIn;
+
 
 const statePatterns = [
   undefined,
@@ -20,10 +24,10 @@ describe('takeCare', () => {
 });
 
 describe('notTakeCare', () => {
-  jest.mock('../../src/utils');
+
 
   describe('状態が変わる場合', () => {
-    utils.randomIn = jest.fn(() => Statuses.STAGE);
+    mockRandomIn.mockReturnValue(Statuses.STAGE);
     statePatterns.forEach(state => {
       it(`state: ${JSON.stringify(state)}`, () => {
         expect(reducer(state, notTakeCare())).toMatchSnapshot()
@@ -32,7 +36,7 @@ describe('notTakeCare', () => {
   });
 
   describe('健康が変わる場合', () => {
-    utils.randomIn = jest.fn(() => Statuses.HEALTH);
+    mockRandomIn.mockReturnValue(Statuses.HEALTH);
     statePatterns.forEach(state => {
       it(`state: ${JSON.stringify(state)}`, () => {
         expect(reducer(state, notTakeCare())).toMatchSnapshot()
