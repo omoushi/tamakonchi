@@ -5,7 +5,7 @@
  * @format
  */
 
-import React from "react";
+import React, { ReactNode } from "react";
 import {createStore} from "redux";
 import {Provider} from "react-redux";
 import Main from "./Main";
@@ -36,8 +36,8 @@ const RootStack = createMaterialTopTabNavigator(
 
 const Navigation = createAppContainer(RootStack);
 
-export default class App extends React.Component<any> {
-  render() {
+export default class App extends React.Component {
+  public render(): ReactNode {
     return (
       <Provider store={store}>
         <Navigation />
