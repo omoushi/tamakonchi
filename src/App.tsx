@@ -34,8 +34,7 @@ const RootStack = createMaterialTopTabNavigator(
   },
 );
 
-let Navigation = createAppContainer(RootStack);
-
+const Navigation = createAppContainer(RootStack);
 
 export default class App extends React.Component<any> {
   render() {
