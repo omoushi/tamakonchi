@@ -6,31 +6,42 @@
  */
 
 import React from "react";
-import {StyleSheet, View} from 'react-native';
 import {createStore} from "redux";
 import {Provider} from "react-redux";
 import Main from "./Main";
+import Collection from "./Collection";
 import {reducer} from "./main/reducer";
+import {createMaterialTopTabNavigator, createAppContainer} from 'react-navigation';
 
 const store = createStore(reducer);
+
+const RootStack = createMaterialTopTabNavigator(
+  {
+    Main: {
+      screen: Main,
+    },
+    Collection: {
+      screen: Collection,
+    },
+  },
+  {
+    initialRouteName: 'Main',
+    tabBarOptions: {
+      tabStyle: {
+        marginTop: 20,
+      },
+    },
+  },
+);
+
+const Navigation = createAppContainer(RootStack);
 
 export default class App extends React.Component<any> {
   render() {
     return (
       <Provider store={store}>
-        <View style={styles.container}>
-          <Main/>
-        </View>
+        <Navigation />
       </Provider>
     );
   }
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#F5FCFF',
-  },
-});
