@@ -39,7 +39,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": ""
+      "pre-commit": "yarn run eslint './src/*' './__tests__/*'"
     }
   }
 }
