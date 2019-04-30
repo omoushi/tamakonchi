@@ -8,5 +8,10 @@
   "rules": {
     "@typescript-eslint/indent": ["error", 2],
     "semi": ["error", "always"]
+  },
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
   }
 }
