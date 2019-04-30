@@ -1,4 +1,4 @@
-import {State, StateEvent} from "./interface";
+import {MainState, MainStateEvent} from "./interface";
 import {Action, Reducer} from "redux";
 import {ActionType} from "./actions";
 import {randomIn} from "../utils";
@@ -15,12 +15,12 @@ export enum Stage {
   EGG = 'たまご', LIVING = 'いきてる', DIED = 'しんでる'
 }
 
-const HATCHING: StateEvent = {stage: Stage.LIVING};
-const DIEING: StateEvent = {stage: Stage.DIED, health: Health.UNKNOWN};
-const SICKING: StateEvent = {health: Health.BAD};
+const HATCHING: MainStateEvent = {stage: Stage.LIVING};
+const DIEING: MainStateEvent = {stage: Stage.DIED, health: Health.UNKNOWN};
+const SICKING: MainStateEvent = {health: Health.BAD};
 
-const takingCare = (state: State): StateEvent => (state.stage === Stage.EGG ? HATCHING : {});
-const notTakingCare = (state: State): StateEvent => {
+const takingCare = (state: MainState): MainStateEvent => (state.stage === Stage.EGG ? HATCHING : {});
+const notTakingCare = (state: MainState): MainStateEvent => {
   const changeTarget: Statuses = randomIn([Statuses.STAGE, Statuses.HEALTH]);
   if (changeTarget === Statuses.STAGE && state.stage !== Stage.DIED) {
     return DIEING
@@ -31,12 +31,12 @@ const notTakingCare = (state: State): StateEvent => {
   }
 };
 
-const initialState: State = {
+const initialState: MainState = {
   stage: Stage.EGG,
   health: Health.GOOD
 };
 
-export const reducer: Reducer = (state: State = initialState, action: Action<ActionType>): State => {
+export const main: Reducer = (state: MainState = initialState, action: Action<ActionType>): MainState => {
   const stateEventCreator = {
     [ActionType.TAKE_CARE]: takingCare,
     [ActionType.NOT_TAKE_CARE]: notTakingCare

@@ -1,12 +1,15 @@
 import React, {FC} from "react";
 import {Button, Text, View, StyleSheet} from "react-native";
-import {Events, Props, State} from "./main/interface";
+import {MainEvents, MainState} from "./main/interface";
 import {Dispatch} from "redux";
 import {notTakeCare, takeCare} from "./main/actions";
 import {connect} from "react-redux";
 import { Pet } from "./components/Pet";
+import { RootState } from "./reducers";
 
-export const Main: FC<Props> = props => (
+type MainProps = MainEvents & MainState;
+
+export const Main: FC<MainProps> = props => (
   <View style={styles.container}>
     <Text>{props.stage}</Text>
     <Text>{props.health}</Text>
@@ -25,10 +28,10 @@ const styles = StyleSheet.create({
   },
 });
 
-export const mapStateToProps = (state: State) => state;
-export const mapDispatchToProps = (dispatch: Dispatch): Events => ({
+export const mapStateToProps = (state: RootState): MainState => state.main;
+export const mapDispatchToProps = (dispatch: Dispatch): MainEvents => ({
   takeCare: () => dispatch(takeCare()),
   notTakeCare: () => dispatch(notTakeCare())
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(Main)
+export default connect(mapStateToProps, mapDispatchToProps)(Main);
