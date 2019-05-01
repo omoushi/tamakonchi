@@ -1,11 +1,20 @@
 import React, { FC, ReactElement } from "react";
 import { Button, Text, View, StyleSheet } from "react-native";
 import { MainEvents, MainState } from "./main/interface";
-import { Dispatch } from "redux";
+import { Action, Dispatch } from "redux";
 import { notTakeCare, takeCare } from "./main/actions";
 import { connect } from "react-redux";
 import { Pet } from "./components/Pet";
 import { RootState } from "./reducers";
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: '#F5FCFF',
+  },
+});
 
 type MainProps = MainEvents & MainState;
 
@@ -18,15 +27,6 @@ export const Main: FC<MainProps> = (props: MainProps): ReactElement => (
     <Button title={'世話をしない'} onPress={props.notTakeCare}/>
   </View>
 );
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#F5FCFF',
-  },
-});
 
 export const mapStateToProps = (state: RootState): MainState => state.main;
 export const mapDispatchToProps = (dispatch: Dispatch): MainEvents => ({
