@@ -1,4 +1,4 @@
-import {Health, reducer, Stage, Statuses} from "../../src/main/reducer";
+import {Health, main, Stage, Statuses} from "../../src/main/reducer";
 import {notTakeCare, takeCare} from "../../src/main/actions";
 import {randomIn} from "../../src/utils";
 
@@ -18,7 +18,7 @@ const statePatterns = [
 describe('takeCare', () => {
   statePatterns.forEach(state => {
     it(`state: ${JSON.stringify(state)}`, () => {
-      expect(reducer(state, takeCare())).toMatchSnapshot()
+      expect(main(state, takeCare())).toMatchSnapshot()
     });
   });
 });
@@ -30,7 +30,7 @@ describe('notTakeCare', () => {
     mockRandomIn.mockReturnValue(Statuses.STAGE);
     statePatterns.forEach(state => {
       it(`state: ${JSON.stringify(state)}`, () => {
-        expect(reducer(state, notTakeCare())).toMatchSnapshot()
+        expect(main(state, notTakeCare())).toMatchSnapshot()
       });
     });
   });
@@ -39,7 +39,7 @@ describe('notTakeCare', () => {
     mockRandomIn.mockReturnValue(Statuses.HEALTH);
     statePatterns.forEach(state => {
       it(`state: ${JSON.stringify(state)}`, () => {
-        expect(reducer(state, notTakeCare())).toMatchSnapshot()
+        expect(main(state, notTakeCare())).toMatchSnapshot()
       });
     });
   });

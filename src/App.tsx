@@ -8,10 +8,8 @@
 import React, { ReactNode } from "react";
 import {createStore} from "redux";
 import {Provider} from "react-redux";
-import Main from "./Main";
-import Collection from "./Collection";
-import {reducer} from "./main/reducer";
-import {createMaterialTopTabNavigator, createAppContainer} from 'react-navigation';
+import reducer from "./reducers";
+import Pager from "./Pager";
 
 const store = createStore(reducer);
 
@@ -40,7 +38,7 @@ export default class App extends React.Component {
   public render(): ReactNode {
     return (
       <Provider store={store}>
-        <Navigation />
+        <Pager/>
       </Provider>
     );
   }
