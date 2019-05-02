@@ -1,18 +1,16 @@
 import {Health, Stage} from "./reducer";
 
-export type Props = State & Events
-
-export type State = {
+export type MainState = {
   stage: Stage
   health: Health
 }
 
-export type StateEvent = {
+export type MainStateEvent = {
   stage?: Stage
   health?: Health
 }
 
-export type Events = {
+export type MainEvents = {
   takeCare(): void
   notTakeCare(): void
 }
