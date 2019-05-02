@@ -1,28 +1,33 @@
 jobs:
   include:
-    - stage: test
-      name: "test"
-      language: node_js
-      node_js: "10"
-      script: yarn test
-    - stage: deploy android
-      name: "deploy"
-      if: branch = master AND type = push
-      language: android
-      jdk: oraclejdk8
-      android:
-        components:
-          - build-tools-28.0.3
-          - android-28
-      before_install:
-        - openssl aes-256-cbc -K $encrypted_7e1d24f25d9e_key -iv $encrypted_7e1d24f25d9e_iv -in ./android/app/tamakonchi.keystore.enc -out ./android/app/tamakonchi.keystore -d
-        - nvm install 10.15.3
-        - gem install bundler
-      install:
-        - yarn
-        - cd android/ && bundle install
-      script: bundle exec fastlane beta
+  - stage: test
+    name: "test"
+    language: node_js
+    node_js: "10"
+    script: yarn test
+  - stage: deploy android
+    name: "deploy"
+    if: branch = master AND type = push
+    language: android
+    jdk: oraclejdk8
+    android:
+      components:
+      - build-tools-28.0.3
+      - android-28
+    before_install:
+    - openssl aes-256-cbc -K $encrypted_7e1d24f25d9e_key -iv $encrypted_7e1d24f25d9e_iv -in ./android/app/tamakonchi.keystore.enc -out ./android/app/tamakonchi.keystore -d
+    - nvm install 10.15.3
+    - gem install bundler
+    install:
+    - yarn
+    - cd android/ && bundle install
+    script: bundle exec fastlane beta
 
 stages:
-  - name: "test"
-  - name: "deploy android"
+- name: test
+- name: deploy android
+
+notifications:
+  email: false
+  slack:
+    secure: NTRfLiXvjYJ6Bexk8DU0e2b9GIgoIahsZ+ytg4w0eSJcjnL5qsJatwf2cq2DW2cdfA8Ray00ce2Qcgg6PwakQayaEGBkgEfzs4ku9j5G+VbUteUC1W4X4XPGfjT/1asC16qzHFGFIVUgwZPpKgWW+f1RSHHTu2uK2IQ6lCd21DJM1DA2VrYoaELa1v7GRSOwuadHwQuuNfe7dmco8VZuSq8/lylrjp3IOOrrk7aJ1xCni1+Z6AEEKlQacKBU4eQO4hPOoJ3u4daGqFHvTNcx6p5l+7PWZsYffcQq6kOwoGPBe+6cFv53tjg+movz082vBdVnnp8/K2NgMT6zNJOOeBFJnZVgJ6y+1UmlSnqZb8CG2LfTQcVaYtW/wKeodxO5fI1PWI+xQad+88y2k/1kRDGZHdSpu9uxNLuE9CYp63Div3B0moLFXTezWDyMglKltQf8wxWvRQZZr2jmiuHAAWK/2PrW0sPHjcawuw27hpsQZJiolH66JrJpp+dutkL0iQ1y/QffEO/rpU2p76wKg4BZYjP8qA/WnZK+p5csQ9tLnF4aQzbVF6UrocSpMYvDPlUSXf2nJka5KfVS2rQ2u6smKs7DYwfv1Ykv+wTvhdbEp3cu6IVtfNxExncRIZ3oOXdjp7uwyxuty0/d4l0UqT3YzXsf8Pi9Op7IzwFvBHc=
