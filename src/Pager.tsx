@@ -1,4 +1,4 @@
-import React from "react";
+import React, { ReactNode } from "react";
 import { StyleSheet, View } from "react-native";
 import Main from "./Main";
 import { connect } from "react-redux";
@@ -27,8 +27,8 @@ const RootStack = createMaterialTopTabNavigator(
 
 const Navigation = createAppContainer(RootStack);
 
-class Pager extends React.Component<any> {
-  styles = StyleSheet.create({
+class Pager extends React.Component {
+  private styles = StyleSheet.create({
     container: {
       flex: 1,
       flexDirection: 'column',
@@ -37,14 +37,14 @@ class Pager extends React.Component<any> {
     },
   });
 
-  componentDidMount() {
+  public componentDidMount(): void {
     console.log('Pager');
   }
 
-  componentWillUnmount() {
+  public componentWillUnmount(): void {
     console.log('Pager');
   }
-  render() {
+  public render(): ReactNode {
     return (
       <View style={this.styles.container}>
         <Navigation/>
