@@ -22,7 +22,6 @@ export const Main: FC<MainProps> = (props: MainProps): ReactElement => (
   <View style={styles.container}>
     <Text>{props.situation}</Text>
     <Text>{props.stage}</Text>
-    <Text>{props.health}</Text>
     <Pet stage={props.stage}/>
     <Button title={'世話をする'} onPress={props.takeCare}/>
     <Button title={'世話をしない'} onPress={props.notTakeCare}/>

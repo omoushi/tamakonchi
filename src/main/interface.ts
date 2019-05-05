@@ -1,15 +1,13 @@
-import { Health, Situation, Stage } from "./reducer";
+import { Situation, Stage } from "./reducer";
 import { Action } from "redux"
 
 export type MainState = {
   stage: Stage
-  health: Health
   situation: Situation
 }
 
 export type MainStateEvent = {
   stage?: Stage
-  health?: Health
   situation?: Situation
 }
 

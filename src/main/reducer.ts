@@ -1,15 +1,8 @@
 import { MainState, MainStateEvent } from "./interface";
 import { Action, Reducer } from "redux";
 import { ActionType } from "./actions";
-import { randomIn } from "../utils";
 
-export enum Statuses {
-  STAGE, HEALTH
-}
-
-export enum Health {
-  GOOD = '健康', BAD = '不健康', UNKNOWN = '不明'
-}
+export enum Statuses { STAGE }
 
 export enum Stage {
   EGG = 'たまご', LIVING = 'いきてる', DIED = 'しんでる'
@@ -20,8 +13,7 @@ export enum Situation {
 }
 
 const HATCHING: MainStateEvent = { stage: Stage.LIVING };
-const DIEING: MainStateEvent = { stage: Stage.DIED, health: Health.UNKNOWN };
-const SICKING: MainStateEvent = { health: Health.BAD };
+const DIEING: MainStateEvent = { stage: Stage.DIED };
 const BREAK_UP: MainStateEvent = { situation: Situation.BrokenUp }
 const NEGLECT: MainStateEvent = { situation: Situation.DEAD }
 
@@ -29,11 +21,9 @@ const breakUp = (state: MainState): MainStateEvent => (state.situation === Situa
 const neglect = (state: MainState): MainStateEvent => (state.situation === Situation.NORMAL ? NEGLECT : {})
 const takingCare = (state: MainState): MainStateEvent => (state.stage === Stage.EGG ? HATCHING : {});
 const notTakingCare = (state: MainState): MainStateEvent => {
-  const changeTarget: Statuses = randomIn([Statuses.STAGE, Statuses.HEALTH]);
+  const changeTarget: Statuses = Statuses.STAGE
   if (changeTarget === Statuses.STAGE && state.stage !== Stage.DIED) {
     return DIEING
-  } else if (changeTarget === Statuses.HEALTH && state.health === Health.GOOD) {
-    return SICKING
   } else {
     return {}
   }
@@ -41,7 +31,6 @@ const notTakingCare = (state: MainState): MainStateEvent => {
 
 const initialState: MainState = {
   stage: Stage.EGG,
-  health: Health.GOOD,
   situation: Situation.NORMAL
 };
 
