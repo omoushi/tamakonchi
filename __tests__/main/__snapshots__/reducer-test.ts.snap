@@ -1,169 +1,301 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`breakUp state: {"stage":"しんだ","situation":"なし"} 1`] = `
+exports[`main breakUp 1`] = `
 Object {
-  "situation": "なし",
-  "stage": "しんだ",
+  "in": undefined,
+  "out": Object {
+    "situation": "なし",
+    "stage": "別れた",
+  },
 }
 `;
 
-exports[`breakUp state: {"stage":"別れた","situation":"なし"} 1`] = `
+exports[`main breakUp 2`] = `
 Object {
-  "situation": "なし",
-  "stage": "別れた",
+  "in": Object {
+    "situation": "なし",
+    "stage": "通常",
+  },
+  "out": Object {
+    "situation": "なし",
+    "stage": "別れた",
+  },
 }
 `;
 
-exports[`breakUp state: {"stage":"通常","situation":"LINEが来る"} 1`] = `
+exports[`main breakUp 3`] = `
 Object {
-  "situation": "LINEが来る",
-  "stage": "別れた",
+  "in": Object {
+    "situation": "仕事がない",
+    "stage": "通常",
+  },
+  "out": Object {
+    "situation": "仕事がない",
+    "stage": "別れた",
+  },
 }
 `;
 
-exports[`breakUp state: {"stage":"通常","situation":"なし"} 1`] = `
+exports[`main breakUp 4`] = `
 Object {
-  "situation": "なし",
-  "stage": "別れた",
+  "in": Object {
+    "situation": "LINEが来る",
+    "stage": "通常",
+  },
+  "out": Object {
+    "situation": "LINEが来る",
+    "stage": "別れた",
+  },
 }
 `;
 
-exports[`breakUp state: {"stage":"通常","situation":"仕事がない"} 1`] = `
+exports[`main breakUp 5`] = `
 Object {
-  "situation": "仕事がない",
-  "stage": "別れた",
+  "in": Object {
+    "situation": "なし",
+    "stage": "しんだ",
+  },
+  "out": Object {
+    "situation": "なし",
+    "stage": "しんだ",
+  },
 }
 `;
 
-exports[`breakUp state: undefined 1`] = `
+exports[`main breakUp 6`] = `
 Object {
-  "situation": "なし",
-  "stage": "別れた",
+  "in": Object {
+    "situation": "なし",
+    "stage": "別れた",
+  },
+  "out": Object {
+    "situation": "なし",
+    "stage": "別れた",
+  },
 }
 `;
 
-exports[`loseJob state: {"stage":"しんだ","situation":"なし"} 1`] = `
+exports[`main loseJob 1`] = `
 Object {
-  "situation": "なし",
-  "stage": "しんだ",
+  "in": undefined,
+  "out": Object {
+    "situation": "仕事がない",
+    "stage": "通常",
+  },
 }
 `;
 
-exports[`loseJob state: {"stage":"別れた","situation":"なし"} 1`] = `
+exports[`main loseJob 2`] = `
 Object {
-  "situation": "なし",
-  "stage": "別れた",
+  "in": Object {
+    "situation": "なし",
+    "stage": "通常",
+  },
+  "out": Object {
+    "situation": "仕事がない",
+    "stage": "通常",
+  },
 }
 `;
 
-exports[`loseJob state: {"stage":"通常","situation":"LINEが来る"} 1`] = `
+exports[`main loseJob 3`] = `
 Object {
-  "situation": "LINEが来る",
-  "stage": "通常",
+  "in": Object {
+    "situation": "仕事がない",
+    "stage": "通常",
+  },
+  "out": Object {
+    "situation": "仕事がない",
+    "stage": "通常",
+  },
 }
 `;
 
-exports[`loseJob state: {"stage":"通常","situation":"なし"} 1`] = `
+exports[`main loseJob 4`] = `
 Object {
-  "situation": "仕事がない",
-  "stage": "通常",
+  "in": Object {
+    "situation": "LINEが来る",
+    "stage": "通常",
+  },
+  "out": Object {
+    "situation": "LINEが来る",
+    "stage": "通常",
+  },
 }
 `;
 
-exports[`loseJob state: {"stage":"通常","situation":"仕事がない"} 1`] = `
+exports[`main loseJob 5`] = `
 Object {
-  "situation": "仕事がない",
-  "stage": "通常",
+  "in": Object {
+    "situation": "なし",
+    "stage": "しんだ",
+  },
+  "out": Object {
+    "situation": "なし",
+    "stage": "しんだ",
+  },
 }
 `;
 
-exports[`loseJob state: undefined 1`] = `
+exports[`main loseJob 6`] = `
 Object {
-  "situation": "仕事がない",
-  "stage": "通常",
+  "in": Object {
+    "situation": "なし",
+    "stage": "別れた",
+  },
+  "out": Object {
+    "situation": "なし",
+    "stage": "別れた",
+  },
 }
 `;
 
-exports[`makeWorry state: {"stage":"しんだ","situation":"なし"} 1`] = `
+exports[`main makeWorry 1`] = `
 Object {
-  "situation": "なし",
-  "stage": "しんだ",
+  "in": undefined,
+  "out": Object {
+    "situation": "LINEが来る",
+    "stage": "通常",
+  },
 }
 `;
 
-exports[`makeWorry state: {"stage":"別れた","situation":"なし"} 1`] = `
+exports[`main makeWorry 2`] = `
 Object {
-  "situation": "なし",
-  "stage": "別れた",
+  "in": Object {
+    "situation": "なし",
+    "stage": "通常",
+  },
+  "out": Object {
+    "situation": "LINEが来る",
+    "stage": "通常",
+  },
 }
 `;
 
-exports[`makeWorry state: {"stage":"通常","situation":"LINEが来る"} 1`] = `
+exports[`main makeWorry 3`] = `
 Object {
-  "situation": "LINEが来る",
-  "stage": "通常",
+  "in": Object {
+    "situation": "仕事がない",
+    "stage": "通常",
+  },
+  "out": Object {
+    "situation": "仕事がない",
+    "stage": "通常",
+  },
 }
 `;
 
-exports[`makeWorry state: {"stage":"通常","situation":"なし"} 1`] = `
+exports[`main makeWorry 4`] = `
 Object {
-  "situation": "LINEが来る",
-  "stage": "通常",
+  "in": Object {
+    "situation": "LINEが来る",
+    "stage": "通常",
+  },
+  "out": Object {
+    "situation": "LINEが来る",
+    "stage": "通常",
+  },
 }
 `;
 
-exports[`makeWorry state: {"stage":"通常","situation":"仕事がない"} 1`] = `
+exports[`main makeWorry 5`] = `
 Object {
-  "situation": "仕事がない",
-  "stage": "通常",
+  "in": Object {
+    "situation": "なし",
+    "stage": "しんだ",
+  },
+  "out": Object {
+    "situation": "なし",
+    "stage": "しんだ",
+  },
 }
 `;
 
-exports[`makeWorry state: undefined 1`] = `
+exports[`main makeWorry 6`] = `
 Object {
-  "situation": "LINEが来る",
-  "stage": "通常",
+  "in": Object {
+    "situation": "なし",
+    "stage": "別れた",
+  },
+  "out": Object {
+    "situation": "なし",
+    "stage": "別れた",
+  },
 }
 `;
 
-exports[`neglect state: {"stage":"しんだ","situation":"なし"} 1`] = `
+exports[`main neglect 1`] = `
 Object {
-  "situation": "なし",
-  "stage": "しんだ",
+  "in": undefined,
+  "out": Object {
+    "situation": "なし",
+    "stage": "しんだ",
+  },
 }
 `;
 
-exports[`neglect state: {"stage":"別れた","situation":"なし"} 1`] = `
+exports[`main neglect 2`] = `
 Object {
-  "situation": "なし",
-  "stage": "別れた",
+  "in": Object {
+    "situation": "なし",
+    "stage": "通常",
+  },
+  "out": Object {
+    "situation": "なし",
+    "stage": "しんだ",
+  },
 }
 `;
 
-exports[`neglect state: {"stage":"通常","situation":"LINEが来る"} 1`] = `
+exports[`main neglect 3`] = `
 Object {
-  "situation": "LINEが来る",
-  "stage": "しんだ",
+  "in": Object {
+    "situation": "仕事がない",
+    "stage": "通常",
+  },
+  "out": Object {
+    "situation": "仕事がない",
+    "stage": "しんだ",
+  },
 }
 `;
 
-exports[`neglect state: {"stage":"通常","situation":"なし"} 1`] = `
+exports[`main neglect 4`] = `
 Object {
-  "situation": "なし",
-  "stage": "しんだ",
+  "in": Object {
+    "situation": "LINEが来る",
+    "stage": "通常",
+  },
+  "out": Object {
+    "situation": "LINEが来る",
+    "stage": "しんだ",
+  },
 }
 `;
 
-exports[`neglect state: {"stage":"通常","situation":"仕事がない"} 1`] = `
+exports[`main neglect 5`] = `
 Object {
-  "situation": "仕事がない",
-  "stage": "しんだ",
+  "in": Object {
+    "situation": "なし",
+    "stage": "しんだ",
+  },
+  "out": Object {
+    "situation": "なし",
+    "stage": "しんだ",
+  },
 }
 `;
 
-exports[`neglect state: undefined 1`] = `
+exports[`main neglect 6`] = `
 Object {
-  "situation": "なし",
-  "stage": "しんだ",
+  "in": Object {
+    "situation": "なし",
+    "stage": "別れた",
+  },
+  "out": Object {
+    "situation": "なし",
+    "stage": "別れた",
+  },
 }
 `;
