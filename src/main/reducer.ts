@@ -18,8 +18,6 @@ const initialState: MainState = {
 
 export const main: Reducer = (state: MainState = initialState, action: Action<ActionType>): MainState => {
   const stateEventCreator = {
-    [ActionType.TAKE_CARE]: (): MainStateEvent => ({}),
-    [ActionType.NOT_TAKE_CARE]: (): MainStateEvent => ({}),
     [ActionType.BREAK_UP]: breakUp,
     [ActionType.NEGLECT]: neglect
   }[action.type];

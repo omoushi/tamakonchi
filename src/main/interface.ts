@@ -10,8 +10,6 @@ export type MainStateEvent = {
 }
 
 export type MainEvents = {
-  takeCare(): Action
-  notTakeCare(): Action
   breakUp(): Action
   neglect(): Action
 }

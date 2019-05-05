@@ -23,27 +23,3 @@ Object {
   "situation": "しんだ",
 }
 `;
-
-exports[`notTakeCare 状態が変わる場合 state: {"situation":"通常"} 1`] = `
-Object {
-  "situation": "通常",
-}
-`;
-
-exports[`notTakeCare 状態が変わる場合 state: undefined 1`] = `
-Object {
-  "situation": "通常",
-}
-`;
-
-exports[`takeCare state: {"situation":"通常"} 1`] = `
-Object {
-  "situation": "通常",
-}
-`;
-
-exports[`takeCare state: undefined 1`] = `
-Object {
-  "situation": "通常",
-}
-`;
