@@ -1,25 +1,25 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`breakUp state: {"situation":"通常"} 1`] = `
+exports[`breakUp state: {"stage":"通常"} 1`] = `
 Object {
-  "situation": "別れた",
+  "stage": "別れた",
 }
 `;
 
 exports[`breakUp state: undefined 1`] = `
 Object {
-  "situation": "別れた",
+  "stage": "別れた",
 }
 `;
 
-exports[`neglect state: {"situation":"通常"} 1`] = `
+exports[`neglect state: {"stage":"通常"} 1`] = `
 Object {
-  "situation": "しんだ",
+  "stage": "しんだ",
 }
 `;
 
 exports[`neglect state: undefined 1`] = `
 Object {
-  "situation": "しんだ",
+  "stage": "しんだ",
 }
 `;

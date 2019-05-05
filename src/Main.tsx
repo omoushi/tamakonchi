@@ -19,7 +19,7 @@ type MainProps = MainEvents & MainState;
 
 export const Main: FC<MainProps> = (props: MainProps): ReactElement => (
   <View style={styles.container}>
-    <Text>{props.situation}</Text>
+    <Text>{props.stage}</Text>
     <Button title={'別れる'} onPress={props.breakUp}/>
     <Button title={'放置する'} onPress={props.neglect}/>
   </View>

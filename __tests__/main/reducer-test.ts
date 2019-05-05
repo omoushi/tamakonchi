@@ -1,10 +1,10 @@
-import { main, Situation } from "../../src/main/reducer";
+import { main, Stage } from "../../src/main/reducer";
 import { breakUp, neglect } from "../../src/main/actions";
 import { MainState } from "../../src/main/interface"
 
 const statePatterns: (MainState | undefined)[] = [
   undefined,
-  { situation: Situation.NORMAL }
+  { stage: Stage.NORMAL }
 ];
 
 describe('breakUp', () => {
