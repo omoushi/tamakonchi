@@ -1,25 +1,106 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`breakUp state: {"stage":"通常"} 1`] = `
+exports[`breakUp state: {"stage":"しんだ","situation":"なし"} 1`] = `
 Object {
+  "situation": "なし",
+  "stage": "しんだ",
+}
+`;
+
+exports[`breakUp state: {"stage":"別れた","situation":"なし"} 1`] = `
+Object {
+  "situation": "なし",
+  "stage": "別れた",
+}
+`;
+
+exports[`breakUp state: {"stage":"通常","situation":"なし"} 1`] = `
+Object {
+  "situation": "なし",
+  "stage": "別れた",
+}
+`;
+
+exports[`breakUp state: {"stage":"通常","situation":"仕事がない"} 1`] = `
+Object {
+  "situation": "仕事がない",
   "stage": "別れた",
 }
 `;
 
 exports[`breakUp state: undefined 1`] = `
 Object {
+  "situation": "なし",
   "stage": "別れた",
 }
 `;
 
-exports[`neglect state: {"stage":"通常"} 1`] = `
+exports[`loseJob state: {"stage":"しんだ","situation":"なし"} 1`] = `
 Object {
+  "situation": "なし",
+  "stage": "しんだ",
+}
+`;
+
+exports[`loseJob state: {"stage":"別れた","situation":"なし"} 1`] = `
+Object {
+  "situation": "なし",
+  "stage": "別れた",
+}
+`;
+
+exports[`loseJob state: {"stage":"通常","situation":"なし"} 1`] = `
+Object {
+  "situation": "仕事がない",
+  "stage": "通常",
+}
+`;
+
+exports[`loseJob state: {"stage":"通常","situation":"仕事がない"} 1`] = `
+Object {
+  "situation": "仕事がない",
+  "stage": "通常",
+}
+`;
+
+exports[`loseJob state: undefined 1`] = `
+Object {
+  "situation": "仕事がない",
+  "stage": "通常",
+}
+`;
+
+exports[`neglect state: {"stage":"しんだ","situation":"なし"} 1`] = `
+Object {
+  "situation": "なし",
+  "stage": "しんだ",
+}
+`;
+
+exports[`neglect state: {"stage":"別れた","situation":"なし"} 1`] = `
+Object {
+  "situation": "なし",
+  "stage": "別れた",
+}
+`;
+
+exports[`neglect state: {"stage":"通常","situation":"なし"} 1`] = `
+Object {
+  "situation": "なし",
+  "stage": "しんだ",
+}
+`;
+
+exports[`neglect state: {"stage":"通常","situation":"仕事がない"} 1`] = `
+Object {
+  "situation": "仕事がない",
   "stage": "しんだ",
 }
 `;
 
 exports[`neglect state: undefined 1`] = `
 Object {
+  "situation": "なし",
   "stage": "しんだ",
 }
 `;

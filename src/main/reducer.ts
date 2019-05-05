@@ -5,23 +5,39 @@ import { ActionType } from "./actions";
 export enum Stage {
   NORMAL = '通常',
   DEAD = 'しんだ',
-  BrokenUp = '別れた'
+  BROKEN_UP = '別れた'
 }
 
-const BREAK_UP: MainStateEvent = { stage: Stage.BrokenUp }
-const NEGLECT: MainStateEvent = { stage: Stage.DEAD }
+export enum Situation {
+  EMPTY = 'なし',
+  NO_JOB = '仕事がない'
+}
 
-const breakUp = (state: MainState): MainStateEvent => (state.stage === Stage.NORMAL ? BREAK_UP : {});
-const neglect = (state: MainState): MainStateEvent => (state.stage === Stage.NORMAL ? NEGLECT : {})
+const BREAK_UP: MainStateEvent = { stage: Stage.BROKEN_UP }
+const NEGLECT: MainStateEvent = { stage: Stage.DEAD }
+const LOSE_JOB: MainStateEvent = { situation: Situation.NO_JOB }
+const NO_EVENT: MainStateEvent = { }
+
+const breakUp = (state: MainState): MainStateEvent => (state.stage === Stage.NORMAL ? BREAK_UP : NO_EVENT);
+const neglect = (state: MainState): MainStateEvent => (state.stage === Stage.NORMAL ? NEGLECT : NO_EVENT)
+const loseJob = (state: MainState): MainStateEvent => {
+  if (state.stage === Stage.NORMAL && state.situation === Situation.EMPTY) {
+    return LOSE_JOB
+  } else {
+    return NO_EVENT
+  }
+}
 
 const initialState: MainState = {
-  stage: Stage.NORMAL
+  stage: Stage.NORMAL,
+  situation: Situation.EMPTY
 };
 
 export const main: Reducer = (state: MainState = initialState, action: Action<ActionType>): MainState => {
   const stateEventCreator = {
     [ActionType.BREAK_UP]: breakUp,
-    [ActionType.NEGLECT]: neglect
+    [ActionType.NEGLECT]: neglect,
+    [ActionType.LOSE_JOB]: loseJob
   }[action.type];
   const stateEvent = stateEventCreator ? stateEventCreator(state) : {};
   return { ...state, ...stateEvent };
