@@ -15,4 +15,5 @@ export type MainEvents = {
   breakUp(): Action
   neglect(): Action
   loseJob(): Action
+  makeWorry(): Action
 }

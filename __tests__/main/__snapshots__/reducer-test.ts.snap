@@ -14,6 +14,13 @@ Object {
 }
 `;
 
+exports[`breakUp state: {"stage":"通常","situation":"LINEが来る"} 1`] = `
+Object {
+  "situation": "LINEが来る",
+  "stage": "別れた",
+}
+`;
+
 exports[`breakUp state: {"stage":"通常","situation":"なし"} 1`] = `
 Object {
   "situation": "なし",
@@ -49,6 +56,13 @@ Object {
 }
 `;
 
+exports[`loseJob state: {"stage":"通常","situation":"LINEが来る"} 1`] = `
+Object {
+  "situation": "LINEが来る",
+  "stage": "通常",
+}
+`;
+
 exports[`loseJob state: {"stage":"通常","situation":"なし"} 1`] = `
 Object {
   "situation": "仕事がない",
@@ -70,6 +84,48 @@ Object {
 }
 `;
 
+exports[`makeWorry state: {"stage":"しんだ","situation":"なし"} 1`] = `
+Object {
+  "situation": "なし",
+  "stage": "しんだ",
+}
+`;
+
+exports[`makeWorry state: {"stage":"別れた","situation":"なし"} 1`] = `
+Object {
+  "situation": "なし",
+  "stage": "別れた",
+}
+`;
+
+exports[`makeWorry state: {"stage":"通常","situation":"LINEが来る"} 1`] = `
+Object {
+  "situation": "LINEが来る",
+  "stage": "通常",
+}
+`;
+
+exports[`makeWorry state: {"stage":"通常","situation":"なし"} 1`] = `
+Object {
+  "situation": "LINEが来る",
+  "stage": "通常",
+}
+`;
+
+exports[`makeWorry state: {"stage":"通常","situation":"仕事がない"} 1`] = `
+Object {
+  "situation": "仕事がない",
+  "stage": "通常",
+}
+`;
+
+exports[`makeWorry state: undefined 1`] = `
+Object {
+  "situation": "LINEが来る",
+  "stage": "通常",
+}
+`;
+
 exports[`neglect state: {"stage":"しんだ","situation":"なし"} 1`] = `
 Object {
   "situation": "なし",
@@ -81,6 +137,13 @@ exports[`neglect state: {"stage":"別れた","situation":"なし"} 1`] = `
 Object {
   "situation": "なし",
   "stage": "別れた",
+}
+`;
+
+exports[`neglect state: {"stage":"通常","situation":"LINEが来る"} 1`] = `
+Object {
+  "situation": "LINEが来る",
+  "stage": "しんだ",
 }
 `;
 
