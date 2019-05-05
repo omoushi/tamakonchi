@@ -1,14 +1,10 @@
-import { main, Situation, Stage } from "../../src/main/reducer";
+import { main, Situation } from "../../src/main/reducer";
 import { breakUp, neglect, notTakeCare, takeCare } from "../../src/main/actions";
 import { MainState } from "../../src/main/interface"
 
 const statePatterns: (MainState | undefined)[] = [
   undefined,
-  { stage: Stage.EGG, situation: Situation.NORMAL },
-  { stage: Stage.EGG, situation: Situation.NORMAL },
-  { stage: Stage.LIVING, situation: Situation.NORMAL },
-  { stage: Stage.LIVING, situation: Situation.NORMAL },
-  { stage: Stage.DIED, situation: Situation.NORMAL }
+  { situation: Situation.NORMAL }
 ];
 
 describe('takeCare', () => {

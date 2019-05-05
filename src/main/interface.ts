@@ -1,13 +1,11 @@
-import { Situation, Stage } from "./reducer";
+import { Situation } from "./reducer";
 import { Action } from "redux"
 
 export type MainState = {
-  stage: Stage
   situation: Situation
 }
 
 export type MainStateEvent = {
-  stage?: Stage
   situation?: Situation
 }
 

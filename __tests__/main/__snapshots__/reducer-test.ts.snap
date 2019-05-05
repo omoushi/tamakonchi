@@ -1,169 +1,49 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`breakUp state: {"stage":"いきてる","situation":"通常"} 1`] = `
+exports[`breakUp state: {"situation":"通常"} 1`] = `
 Object {
   "situation": "別れた",
-  "stage": "いきてる",
-}
-`;
-
-exports[`breakUp state: {"stage":"いきてる","situation":"通常"} 2`] = `
-Object {
-  "situation": "別れた",
-  "stage": "いきてる",
-}
-`;
-
-exports[`breakUp state: {"stage":"しんでる","situation":"通常"} 1`] = `
-Object {
-  "situation": "別れた",
-  "stage": "しんでる",
-}
-`;
-
-exports[`breakUp state: {"stage":"たまご","situation":"通常"} 1`] = `
-Object {
-  "situation": "別れた",
-  "stage": "たまご",
-}
-`;
-
-exports[`breakUp state: {"stage":"たまご","situation":"通常"} 2`] = `
-Object {
-  "situation": "別れた",
-  "stage": "たまご",
 }
 `;
 
 exports[`breakUp state: undefined 1`] = `
 Object {
   "situation": "別れた",
-  "stage": "たまご",
 }
 `;
 
-exports[`neglect state: {"stage":"いきてる","situation":"通常"} 1`] = `
+exports[`neglect state: {"situation":"通常"} 1`] = `
 Object {
   "situation": "しんだ",
-  "stage": "いきてる",
-}
-`;
-
-exports[`neglect state: {"stage":"いきてる","situation":"通常"} 2`] = `
-Object {
-  "situation": "しんだ",
-  "stage": "いきてる",
-}
-`;
-
-exports[`neglect state: {"stage":"しんでる","situation":"通常"} 1`] = `
-Object {
-  "situation": "しんだ",
-  "stage": "しんでる",
-}
-`;
-
-exports[`neglect state: {"stage":"たまご","situation":"通常"} 1`] = `
-Object {
-  "situation": "しんだ",
-  "stage": "たまご",
-}
-`;
-
-exports[`neglect state: {"stage":"たまご","situation":"通常"} 2`] = `
-Object {
-  "situation": "しんだ",
-  "stage": "たまご",
 }
 `;
 
 exports[`neglect state: undefined 1`] = `
 Object {
   "situation": "しんだ",
-  "stage": "たまご",
 }
 `;
 
-exports[`notTakeCare 状態が変わる場合 state: {"stage":"いきてる","situation":"通常"} 1`] = `
+exports[`notTakeCare 状態が変わる場合 state: {"situation":"通常"} 1`] = `
 Object {
   "situation": "通常",
-  "stage": "しんでる",
-}
-`;
-
-exports[`notTakeCare 状態が変わる場合 state: {"stage":"いきてる","situation":"通常"} 2`] = `
-Object {
-  "situation": "通常",
-  "stage": "しんでる",
-}
-`;
-
-exports[`notTakeCare 状態が変わる場合 state: {"stage":"しんでる","situation":"通常"} 1`] = `
-Object {
-  "situation": "通常",
-  "stage": "しんでる",
-}
-`;
-
-exports[`notTakeCare 状態が変わる場合 state: {"stage":"たまご","situation":"通常"} 1`] = `
-Object {
-  "situation": "通常",
-  "stage": "しんでる",
-}
-`;
-
-exports[`notTakeCare 状態が変わる場合 state: {"stage":"たまご","situation":"通常"} 2`] = `
-Object {
-  "situation": "通常",
-  "stage": "しんでる",
 }
 `;
 
 exports[`notTakeCare 状態が変わる場合 state: undefined 1`] = `
 Object {
   "situation": "通常",
-  "stage": "しんでる",
 }
 `;
 
-exports[`takeCare state: {"stage":"いきてる","situation":"通常"} 1`] = `
+exports[`takeCare state: {"situation":"通常"} 1`] = `
 Object {
   "situation": "通常",
-  "stage": "いきてる",
-}
-`;
-
-exports[`takeCare state: {"stage":"いきてる","situation":"通常"} 2`] = `
-Object {
-  "situation": "通常",
-  "stage": "いきてる",
-}
-`;
-
-exports[`takeCare state: {"stage":"しんでる","situation":"通常"} 1`] = `
-Object {
-  "situation": "通常",
-  "stage": "しんでる",
-}
-`;
-
-exports[`takeCare state: {"stage":"たまご","situation":"通常"} 1`] = `
-Object {
-  "situation": "通常",
-  "stage": "いきてる",
-}
-`;
-
-exports[`takeCare state: {"stage":"たまご","situation":"通常"} 2`] = `
-Object {
-  "situation": "通常",
-  "stage": "いきてる",
 }
 `;
 
 exports[`takeCare state: undefined 1`] = `
 Object {
   "situation": "通常",
-  "stage": "いきてる",
 }
 `;
