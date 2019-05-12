@@ -1,46 +1,54 @@
-import {MainState, MainStateEvent} from "./interface";
-import {Action, Reducer} from "redux";
-import {ActionType} from "./actions";
-import {randomIn} from "../utils";
-
-export enum Statuses {
-  STAGE, HEALTH
-}
-
-export enum Health {
-  GOOD = '健康', BAD = '不健康', UNKNOWN = '不明'
-}
+import { MainState, MainStateEvent } from "./interface";
+import { Action, Reducer } from "redux";
+import { ActionType } from "./actions";
 
 export enum Stage {
-  EGG = 'たまご', LIVING = 'いきてる', DIED = 'しんでる'
+  NORMAL = '通常',
+  DEAD = 'しんだ',
+  BROKEN_UP = '別れた'
 }
 
-const HATCHING: MainStateEvent = {stage: Stage.LIVING};
-const DIEING: MainStateEvent = {stage: Stage.DIED, health: Health.UNKNOWN};
-const SICKING: MainStateEvent = {health: Health.BAD};
+export enum Situation {
+  EMPTY = 'なし',
+  NO_JOB = '仕事がない',
+  LINE = 'LINEが来る'
+}
 
-const takingCare = (state: MainState): MainStateEvent => (state.stage === Stage.EGG ? HATCHING : {});
-const notTakingCare = (state: MainState): MainStateEvent => {
-  const changeTarget: Statuses = randomIn([Statuses.STAGE, Statuses.HEALTH]);
-  if (changeTarget === Statuses.STAGE && state.stage !== Stage.DIED) {
-    return DIEING
-  } else if (changeTarget === Statuses.HEALTH && state.health === Health.GOOD) {
-    return SICKING
+const NO_EVENT: MainStateEvent = { }
+const BREAK_UP: MainStateEvent = { stage: Stage.BROKEN_UP }
+const NEGLECT: MainStateEvent = { stage: Stage.DEAD }
+const LOSE_JOB: MainStateEvent = { situation: Situation.NO_JOB }
+const LINE: MainStateEvent = { situation: Situation.LINE }
+
+const breakUp = (state: MainState): MainStateEvent => (state.stage === Stage.NORMAL ? BREAK_UP : NO_EVENT);
+const neglect = (state: MainState): MainStateEvent => (state.stage === Stage.NORMAL ? NEGLECT : NO_EVENT)
+const loseJob = (state: MainState): MainStateEvent => {
+  if (state.stage === Stage.NORMAL && state.situation === Situation.EMPTY) {
+    return LOSE_JOB
   } else {
-    return {}
+    return NO_EVENT
   }
-};
+}
+const worry = (state: MainState): MainStateEvent => {
+  if (state.stage === Stage.NORMAL && state.situation === Situation.EMPTY) {
+    return LINE
+  } else {
+    return NO_EVENT
+  }
+}
 
 const initialState: MainState = {
-  stage: Stage.EGG,
-  health: Health.GOOD
+  stage: Stage.NORMAL,
+  situation: Situation.EMPTY
 };
 
 export const main: Reducer = (state: MainState = initialState, action: Action<ActionType>): MainState => {
   const stateEventCreator = {
-    [ActionType.TAKE_CARE]: takingCare,
-    [ActionType.NOT_TAKE_CARE]: notTakingCare
+    [ActionType.BREAK_UP]: breakUp,
+    [ActionType.NEGLECT]: neglect,
+    [ActionType.LOSE_JOB]: loseJob,
+    [ActionType.MAKE_WORRY]: worry
   }[action.type];
   const stateEvent = stateEventCreator ? stateEventCreator(state) : {};
-  return {...state, ...stateEvent};
+  return { ...state, ...stateEvent };
 };

@@ -7,7 +7,7 @@ interface Props {
 }
 
 export const Knife: FC<Props> = ({tool}) => {
-  const source = require('../assets/img/egg.png');
+  const source = require('../assets/img/knife.png');
   return (
     <View
       style={{
