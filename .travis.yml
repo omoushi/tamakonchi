@@ -4,7 +4,7 @@ jobs:
     name: "test"
     language: node_js
     node_js: "10"
-    script: yarn test
+    script: yarn test:ci
   - stage: deploy android
     name: "deploy"
     if: branch = master AND type = push
