@@ -1,46 +1,20 @@
-import {Health, main, Stage, Statuses} from "../../src/main/reducer";
-import {notTakeCare, takeCare} from "../../src/main/actions";
-import {randomIn} from "../../src/utils";
+import { main, Situation, Stage } from "../../src/main/reducer";
+import { breakUp, loseJob, makeWorry, neglect } from "../../src/main/actions";
+import { takeSnapshot } from "../utils"
+import { MainState } from "../../src/main/interface"
+import { AnyAction } from "redux"
 
-jest.mock('../../src/utils');
-const mockRandomIn = <jest.Mock<Statuses>>randomIn;
-
-
-const statePatterns = [
-  undefined,
-  {stage: Stage.EGG, health: Health.GOOD},
-  {stage: Stage.EGG, health: Health.BAD},
-  {stage: Stage.LIVING, health: Health.GOOD},
-  {stage: Stage.LIVING, health: Health.BAD},
-  {stage: Stage.DIED, health: Health.UNKNOWN}
-];
-
-describe('takeCare', () => {
-  statePatterns.forEach(state => {
-    it(`state: ${JSON.stringify(state)}`, () => {
-      expect(main(state, takeCare())).toMatchSnapshot()
-    });
-  });
-});
-
-describe('notTakeCare', () => {
-
-
-  describe('状態が変わる場合', () => {
-    mockRandomIn.mockReturnValue(Statuses.STAGE);
-    statePatterns.forEach(state => {
-      it(`state: ${JSON.stringify(state)}`, () => {
-        expect(main(state, notTakeCare())).toMatchSnapshot()
-      });
-    });
-  });
-
-  describe('健康が変わる場合', () => {
-    mockRandomIn.mockReturnValue(Statuses.HEALTH);
-    statePatterns.forEach(state => {
-      it(`state: ${JSON.stringify(state)}`, () => {
-        expect(main(state, notTakeCare())).toMatchSnapshot()
-      });
-    });
+describe('main', () => {
+  takeSnapshot<MainState, AnyAction>({
+    reducer: main,
+    states: [
+      undefined,
+      { stage: Stage.NORMAL, situation: Situation.EMPTY },
+      { stage: Stage.NORMAL, situation: Situation.NO_JOB },
+      { stage: Stage.NORMAL, situation: Situation.LINE },
+      { stage: Stage.DEAD, situation: Situation.EMPTY },
+      { stage: Stage.BROKEN_UP, situation: Situation.EMPTY }
+    ],
+    actionCreators: [breakUp, neglect, loseJob, makeWorry]
   });
 });

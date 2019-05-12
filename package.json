@@ -36,7 +36,11 @@
     "yarn": "^1.15.2"
   },
   "jest": {
-    "preset": "react-native"
+    "preset": "react-native",
+    "testPathIgnorePatterns": [
+      "/node_modules/",
+      "/__tests__/utils.ts"
+    ]
   },
   "husky": {
     "hooks": {
