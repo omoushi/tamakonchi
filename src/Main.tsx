@@ -31,7 +31,7 @@ export const Main: FC<MainProps> = (props: MainProps): ReactElement => {
       <Button title={'放置する'} onPress={props.neglect}/>
       <Button title={'仕事がなくなる'} onPress={props.loseJob}/>
       <Button title={'心配にさせる'} onPress={props.makeWorry}/>
-      {props.tools.map((tool) => <Knife key={tool.id} tool={tool} />)}
+      {props.tools.map((tool): ReactElement => <Knife key={tool.id} tool={tool} />)}
     </View>
   );
 };

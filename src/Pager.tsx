@@ -33,7 +33,7 @@ type PagerProps = TimerEvents;
 const Navigation = createAppContainer(RootStack);
 
 class Pager extends React.Component<PagerProps> {
-  intervalId: number = 0;
+  private intervalId: number = 0;
 
   private styles = StyleSheet.create({
     container: {
@@ -45,7 +45,7 @@ class Pager extends React.Component<PagerProps> {
   });
 
   public componentDidMount(): void {
-    this.intervalId = setInterval(() => {
+    this.intervalId = setInterval((): void => {
       this.props.moreTool();
     }, 3 * 1000);
   }
