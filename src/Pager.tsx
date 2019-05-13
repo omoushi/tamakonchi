@@ -30,10 +30,9 @@ const RootStack = createMaterialTopTabNavigator(
 );
 
 type PagerProps = TimerEvents;
-type PagerState = {};
 const Navigation = createAppContainer(RootStack);
 
-class Pager extends React.Component<PagerProps, PagerState> {
+class Pager extends React.Component<PagerProps> {
   intervalId: number = 0;
 
   private styles = StyleSheet.create({
