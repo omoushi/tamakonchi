@@ -1,127 +1,301 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`notTakeCare 健康が変わる場合 state: {"stage":"いきてる","health":"不健康"} 1`] = `
+exports[`main breakUp 1`] = `
 Object {
-  "health": "不健康",
-  "stage": "いきてる",
+  "in": undefined,
+  "out": Object {
+    "situation": "なし",
+    "stage": "別れた",
+  },
 }
 `;
 
-exports[`notTakeCare 健康が変わる場合 state: {"stage":"いきてる","health":"健康"} 1`] = `
+exports[`main breakUp 2`] = `
 Object {
-  "health": "不健康",
-  "stage": "いきてる",
+  "in": Object {
+    "situation": "なし",
+    "stage": "通常",
+  },
+  "out": Object {
+    "situation": "なし",
+    "stage": "別れた",
+  },
 }
 `;
 
-exports[`notTakeCare 健康が変わる場合 state: {"stage":"しんでる","health":"不明"} 1`] = `
+exports[`main breakUp 3`] = `
 Object {
-  "health": "不明",
-  "stage": "しんでる",
+  "in": Object {
+    "situation": "仕事がない",
+    "stage": "通常",
+  },
+  "out": Object {
+    "situation": "仕事がない",
+    "stage": "別れた",
+  },
 }
 `;
 
-exports[`notTakeCare 健康が変わる場合 state: {"stage":"たまご","health":"不健康"} 1`] = `
+exports[`main breakUp 4`] = `
 Object {
-  "health": "不健康",
-  "stage": "たまご",
+  "in": Object {
+    "situation": "LINEが来る",
+    "stage": "通常",
+  },
+  "out": Object {
+    "situation": "LINEが来る",
+    "stage": "別れた",
+  },
 }
 `;
 
-exports[`notTakeCare 健康が変わる場合 state: {"stage":"たまご","health":"健康"} 1`] = `
+exports[`main breakUp 5`] = `
 Object {
-  "health": "不健康",
-  "stage": "たまご",
+  "in": Object {
+    "situation": "なし",
+    "stage": "しんだ",
+  },
+  "out": Object {
+    "situation": "なし",
+    "stage": "しんだ",
+  },
 }
 `;
 
-exports[`notTakeCare 健康が変わる場合 state: undefined 1`] = `
+exports[`main breakUp 6`] = `
 Object {
-  "health": "不健康",
-  "stage": "たまご",
+  "in": Object {
+    "situation": "なし",
+    "stage": "別れた",
+  },
+  "out": Object {
+    "situation": "なし",
+    "stage": "別れた",
+  },
 }
 `;
 
-exports[`notTakeCare 状態が変わる場合 state: {"stage":"いきてる","health":"不健康"} 1`] = `
+exports[`main loseJob 1`] = `
 Object {
-  "health": "不健康",
-  "stage": "いきてる",
+  "in": undefined,
+  "out": Object {
+    "situation": "仕事がない",
+    "stage": "通常",
+  },
 }
 `;
 
-exports[`notTakeCare 状態が変わる場合 state: {"stage":"いきてる","health":"健康"} 1`] = `
+exports[`main loseJob 2`] = `
 Object {
-  "health": "不健康",
-  "stage": "いきてる",
+  "in": Object {
+    "situation": "なし",
+    "stage": "通常",
+  },
+  "out": Object {
+    "situation": "仕事がない",
+    "stage": "通常",
+  },
 }
 `;
 
-exports[`notTakeCare 状態が変わる場合 state: {"stage":"しんでる","health":"不明"} 1`] = `
+exports[`main loseJob 3`] = `
 Object {
-  "health": "不明",
-  "stage": "しんでる",
+  "in": Object {
+    "situation": "仕事がない",
+    "stage": "通常",
+  },
+  "out": Object {
+    "situation": "仕事がない",
+    "stage": "通常",
+  },
 }
 `;
 
-exports[`notTakeCare 状態が変わる場合 state: {"stage":"たまご","health":"不健康"} 1`] = `
+exports[`main loseJob 4`] = `
 Object {
-  "health": "不健康",
-  "stage": "たまご",
+  "in": Object {
+    "situation": "LINEが来る",
+    "stage": "通常",
+  },
+  "out": Object {
+    "situation": "LINEが来る",
+    "stage": "通常",
+  },
 }
 `;
 
-exports[`notTakeCare 状態が変わる場合 state: {"stage":"たまご","health":"健康"} 1`] = `
+exports[`main loseJob 5`] = `
 Object {
-  "health": "不健康",
-  "stage": "たまご",
+  "in": Object {
+    "situation": "なし",
+    "stage": "しんだ",
+  },
+  "out": Object {
+    "situation": "なし",
+    "stage": "しんだ",
+  },
 }
 `;
 
-exports[`notTakeCare 状態が変わる場合 state: undefined 1`] = `
+exports[`main loseJob 6`] = `
 Object {
-  "health": "不健康",
-  "stage": "たまご",
+  "in": Object {
+    "situation": "なし",
+    "stage": "別れた",
+  },
+  "out": Object {
+    "situation": "なし",
+    "stage": "別れた",
+  },
 }
 `;
 
-exports[`takeCare state: {"stage":"いきてる","health":"不健康"} 1`] = `
+exports[`main makeWorry 1`] = `
 Object {
-  "health": "不健康",
-  "stage": "いきてる",
+  "in": undefined,
+  "out": Object {
+    "situation": "LINEが来る",
+    "stage": "通常",
+  },
 }
 `;
 
-exports[`takeCare state: {"stage":"いきてる","health":"健康"} 1`] = `
+exports[`main makeWorry 2`] = `
 Object {
-  "health": "健康",
-  "stage": "いきてる",
+  "in": Object {
+    "situation": "なし",
+    "stage": "通常",
+  },
+  "out": Object {
+    "situation": "LINEが来る",
+    "stage": "通常",
+  },
 }
 `;
 
-exports[`takeCare state: {"stage":"しんでる","health":"不明"} 1`] = `
+exports[`main makeWorry 3`] = `
 Object {
-  "health": "不明",
-  "stage": "しんでる",
+  "in": Object {
+    "situation": "仕事がない",
+    "stage": "通常",
+  },
+  "out": Object {
+    "situation": "仕事がない",
+    "stage": "通常",
+  },
 }
 `;
 
-exports[`takeCare state: {"stage":"たまご","health":"不健康"} 1`] = `
+exports[`main makeWorry 4`] = `
 Object {
-  "health": "不健康",
-  "stage": "いきてる",
+  "in": Object {
+    "situation": "LINEが来る",
+    "stage": "通常",
+  },
+  "out": Object {
+    "situation": "LINEが来る",
+    "stage": "通常",
+  },
 }
 `;
 
-exports[`takeCare state: {"stage":"たまご","health":"健康"} 1`] = `
+exports[`main makeWorry 5`] = `
 Object {
-  "health": "健康",
-  "stage": "いきてる",
+  "in": Object {
+    "situation": "なし",
+    "stage": "しんだ",
+  },
+  "out": Object {
+    "situation": "なし",
+    "stage": "しんだ",
+  },
 }
 `;
 
-exports[`takeCare state: undefined 1`] = `
+exports[`main makeWorry 6`] = `
 Object {
-  "health": "健康",
-  "stage": "いきてる",
+  "in": Object {
+    "situation": "なし",
+    "stage": "別れた",
+  },
+  "out": Object {
+    "situation": "なし",
+    "stage": "別れた",
+  },
+}
+`;
+
+exports[`main neglect 1`] = `
+Object {
+  "in": undefined,
+  "out": Object {
+    "situation": "なし",
+    "stage": "しんだ",
+  },
+}
+`;
+
+exports[`main neglect 2`] = `
+Object {
+  "in": Object {
+    "situation": "なし",
+    "stage": "通常",
+  },
+  "out": Object {
+    "situation": "なし",
+    "stage": "しんだ",
+  },
+}
+`;
+
+exports[`main neglect 3`] = `
+Object {
+  "in": Object {
+    "situation": "仕事がない",
+    "stage": "通常",
+  },
+  "out": Object {
+    "situation": "仕事がない",
+    "stage": "しんだ",
+  },
+}
+`;
+
+exports[`main neglect 4`] = `
+Object {
+  "in": Object {
+    "situation": "LINEが来る",
+    "stage": "通常",
+  },
+  "out": Object {
+    "situation": "LINEが来る",
+    "stage": "しんだ",
+  },
+}
+`;
+
+exports[`main neglect 5`] = `
+Object {
+  "in": Object {
+    "situation": "なし",
+    "stage": "しんだ",
+  },
+  "out": Object {
+    "situation": "なし",
+    "stage": "しんだ",
+  },
+}
+`;
+
+exports[`main neglect 6`] = `
+Object {
+  "in": Object {
+    "situation": "なし",
+    "stage": "別れた",
+  },
+  "out": Object {
+    "situation": "なし",
+    "stage": "別れた",
+  },
 }
 `;

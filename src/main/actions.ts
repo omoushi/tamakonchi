@@ -1,10 +1,16 @@
-import {Action, ActionCreator} from "redux";
+import { Action, ActionCreator } from "redux";
 
 export enum ActionType {
-  TAKE_CARE = 'TAKE_CARE',
-  NOT_TAKE_CARE = 'NOT_TAKE_CARE'
+  BREAK_UP = 'BREAK_UP',
+  NEGLECT = 'NEGLECT',
+  LOSE_JOB = 'LOSE_JOB',
+  MAKE_WORRY = 'MAKE_WORRY'
 }
 
-export const takeCare: ActionCreator<Action> = () => ({type: ActionType.TAKE_CARE});
+export const breakUp: ActionCreator<Action> = () => ({ type: ActionType.BREAK_UP });
 
-export const notTakeCare: ActionCreator<Action> = () => ({type: ActionType.NOT_TAKE_CARE});
+export const neglect: ActionCreator<Action> = () => ({ type: ActionType.NEGLECT });
+
+export const loseJob: ActionCreator<Action> = () => ({ type: ActionType.LOSE_JOB });
+
+export const makeWorry: ActionCreator<Action> = () => ({ type: ActionType.MAKE_WORRY });
