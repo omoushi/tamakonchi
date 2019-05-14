@@ -4,6 +4,10 @@ import Main from "./Main";
 import { connect } from "react-redux";
 import Collection from "./Collection";
 import { createStackNavigator, createAppContainer } from 'react-navigation';
+import { RootState } from "./reducers";
+import { TimerState, TimerEvents } from "./timer/interface";
+import { moreTool } from "./timer/actions";
+import { Action, Dispatch } from "redux";
 
 
 const RootStack = createStackNavigator(
@@ -20,8 +24,12 @@ const RootStack = createStackNavigator(
   },
 );
 
+type PagerProps = TimerEvents;
 const Navigation = createAppContainer(RootStack);
-class Pager extends React.Component {
+
+class Pager extends React.Component<PagerProps> {
+  private intervalId: number = 0;
+
   private styles = StyleSheet.create({
     container: {
       flex: 1,
@@ -32,11 +40,13 @@ class Pager extends React.Component {
   });
 
   public componentDidMount(): void {
-    console.log('Pager');
+    this.intervalId = setInterval((): void => {
+      this.props.moreTool();
+    }, 3 * 1000);
   }
 
   public componentWillUnmount(): void {
-    console.log('Pager');
+    clearInterval(this.intervalId);
   }
   public render(): ReactNode {
     return (
@@ -47,4 +57,8 @@ class Pager extends React.Component {
   }
 }
 
-export default connect()(Pager);
+export const mapStateToProps = (state: RootState): TimerState => state.timer;
+export const mapDispatchToProps = (dispatch: Dispatch): TimerEvents => ({
+  moreTool: (): Action => dispatch(moreTool()),
+});
+export default connect(mapStateToProps, mapDispatchToProps)(Pager);

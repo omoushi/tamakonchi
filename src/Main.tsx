@@ -5,6 +5,8 @@ import { Action, Dispatch } from "redux";
 import { breakUp, loseJob, makeWorry, neglect } from "./main/actions";
 import { connect } from "react-redux";
 import { RootState } from "./reducers";
+import { Knife } from "./components/Knife";
+import { TimerState } from "./timer/interface";
 import { NavigationTransitionProps } from "react-navigation";
 import { Situation } from "./main/reducer";
 
@@ -24,7 +26,7 @@ const styles = StyleSheet.create({
   }
 });
 
-type MainProps = MainEvents & MainState & NavigationTransitionProps;
+type MainProps = MainEvents & MainState & NavigationTransitionProps & TimerState;
 
 export const Main: FC<MainProps> = (props: MainProps): ReactElement => {
   const isSicked = props.situation !== Situation.EMPTY;
@@ -46,12 +48,13 @@ export const Main: FC<MainProps> = (props: MainProps): ReactElement => {
         <Button title={'放置する'} onPress={props.neglect}/>
         <Button title={'仕事がなくなる'} onPress={props.loseJob}/>
         <Button title={'心配にさせる'} onPress={props.makeWorry}/>
+        {props.tools.map((tool): ReactElement => <Knife key={tool.id} tool={tool} />)}
       </View>
     </View>
   );
 };
 
-export const mapStateToProps = (state: RootState): MainState => state.main;
+export const mapStateToProps = (state: RootState): MainState & TimerState => ({...state.main, ...state.timer});
 export const mapDispatchToProps = (dispatch: Dispatch): MainEvents => ({
   breakUp: (): Action => dispatch(breakUp()),
   neglect: (): Action => dispatch(neglect()),

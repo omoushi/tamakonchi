@@ -27,5 +27,6 @@ jest.mock('react-navigation', (): object => {
 });
 
 it('renders correctly', (): void => {
-  renderer.create(<App />);
+  const component = renderer.create(<App />);
+  component.unmount();
 });
