@@ -1,5 +1,5 @@
 import React, { ReactNode } from "react";
-import { StyleSheet, View, Button } from "react-native";
+import { StyleSheet, View } from "react-native";
 import Main from "./Main";
 import { connect } from "react-redux";
 import Collection from "./Collection";
