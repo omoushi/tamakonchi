@@ -1,16 +1,16 @@
 import React, { ReactNode } from "react";
-import { StyleSheet, View } from "react-native";
+import { StyleSheet, View, Button } from "react-native";
 import Main from "./Main";
 import { connect } from "react-redux";
 import Collection from "./Collection";
-import {createMaterialTopTabNavigator, createAppContainer} from 'react-navigation';
+import { createStackNavigator, createAppContainer } from 'react-navigation';
 import { RootState } from "./reducers";
 import { TimerState, TimerEvents } from "./timer/interface";
 import { moreTool } from "./timer/actions";
 import { Action, Dispatch } from "redux";
 
 
-const RootStack = createMaterialTopTabNavigator(
+const RootStack = createStackNavigator(
   {
     Main: {
       screen: Main,
@@ -21,11 +21,6 @@ const RootStack = createMaterialTopTabNavigator(
   },
   {
     initialRouteName: 'Main',
-    tabBarOptions: {
-      tabStyle: {
-        marginTop: 20,
-      },
-    },
   },
 );
 
