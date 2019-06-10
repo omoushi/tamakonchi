@@ -6,7 +6,7 @@ export interface Factor<S, A extends Action> {
   actionCreators: ActionCreator<A>[];
 }
 
-export function takeSnapshot<S, A extends Action>(factor: Factor<S, A>) {
+export function takeSnapshot<S, A extends Action>(factor: Factor<S, A>): void {
   factor.actionCreators.forEach((actionCreator): void => {
     it(actionCreator.name, (): void => {
       factor.states.forEach((state): void => {
