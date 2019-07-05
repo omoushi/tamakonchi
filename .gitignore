@@ -13,9 +13,14 @@ ios/build/
 !default.mode2v3
 *.perspectivev3
 !default.perspectivev3
+xcuserdata
+*.xccheckout
 *.moved-aside
 DerivedData
+*.hmap
 *.ipa
+*.xcuserstate
+project.xcworkspace
 
 # Android/IntelliJ
 #
@@ -50,6 +55,9 @@ buck-out/
 
 # Bundle artifact
 *.jsbundle
+
+# CocoaPods
+/ios/Pods/
 
 # Bundler
 **/vendor/bundle
