@@ -48,5 +48,11 @@
     "hooks": {
       "pre-commit": "yarn lint"
     }
+  },
+  "greenkeeper": {
+    "ignore": [
+      "react-native",
+      "@types/react-native"
+    ]
   }
 }
