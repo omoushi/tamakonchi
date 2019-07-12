@@ -1,12 +1,12 @@
 import React, { ReactNode } from "react";
 import { StyleSheet, View } from "react-native";
-import Main from "./components/Main";
+import Main from "./Main";
 import { connect } from "react-redux";
-import Collection from "./components/Collection";
+import Collection from "./Collection";
 import { createStackNavigator, createAppContainer } from 'react-navigation';
-import { RootState } from "./reducers";
-import { TimerState, TimerEvents } from "./timer/interface";
-import { moreTool } from "./timer/actions";
+import { RootState } from "../reducers";
+import { TimerState, TimerEvents } from "../timer/interface";
+import { moreTool } from "../timer/actions";
 import { Action, Dispatch } from "redux";
 
 

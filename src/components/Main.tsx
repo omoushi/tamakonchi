@@ -8,7 +8,7 @@ import { RootState } from "../reducers";
 import { Knife } from "./Knife";
 import { TimerState } from "../timer/interface";
 import { NavigationTransitionProps } from "react-navigation";
-import { Situation } from "../main/reducer";
+import { Situation } from "../reducers/main";
 
 const styles = StyleSheet.create({
   container: {

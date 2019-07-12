@@ -9,7 +9,7 @@ import React, { ReactNode } from "react";
 import {createStore} from "redux";
 import {Provider} from "react-redux";
 import reducer from "./reducers";
-import Pager from "./Pager";
+import Pager from "./components/Pager";
 
 const store = createStore(reducer);
 

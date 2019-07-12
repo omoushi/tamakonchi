@@ -1,4 +1,4 @@
-import { Situation, Stage } from "./reducer";
+import { Situation, Stage } from "../reducers/main";
 import { Action } from "redux"
 
 export type MainState = {
