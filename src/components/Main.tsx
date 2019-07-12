@@ -1,14 +1,14 @@
 import React, { FC, ReactElement } from "react";
 import { Button, StyleSheet, Text, View } from "react-native";
-import { MainEvents, MainState } from "./main/interface";
+import { MainEvents, MainState } from "../main/interface";
 import { Action, Dispatch } from "redux";
-import { breakUp, loseJob, makeWorry, neglect } from "./main/actions";
+import { breakUp, loseJob, makeWorry, neglect } from "../main/actions";
 import { connect } from "react-redux";
-import { RootState } from "./reducers";
-import { Knife } from "./components/Knife";
-import { TimerState } from "./timer/interface";
+import { RootState } from "../reducers";
+import { Knife } from "./Knife";
+import { TimerState } from "../timer/interface";
 import { NavigationTransitionProps } from "react-navigation";
-import { Situation } from "./main/reducer";
+import { Situation } from "../main/reducer";
 
 const styles = StyleSheet.create({
   container: {
