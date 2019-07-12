@@ -6,7 +6,7 @@ import renderer from 'react-test-renderer';
 import App from "../src/App";
 import Pager from "../src/components/Pager";
 
-jest.mock('../src/Pager', () => {
+jest.mock('../src/components/Pager', () => {
   return jest.fn().mockImplementation(() => {
     return <div />;
   });
