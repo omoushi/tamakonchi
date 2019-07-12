@@ -1,6 +1,7 @@
 import React, { FC } from "react";
 import { Image, View } from "react-native";
-import { Tool } from "../timer/interface";
+
+import { Tool } from "../types/timer";
 
 interface Props {
   tool: Tool

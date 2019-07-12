@@ -1,5 +1,6 @@
-import { MainState, MainStateEvent } from "../main/interface";
 import { Action, Reducer } from "redux";
+
+import { MainState, MainStateEvent } from "../types/main";
 import { ActionType } from "../actions/main";
 
 export enum Stage {

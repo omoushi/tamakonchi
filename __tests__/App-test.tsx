@@ -1,9 +1,10 @@
+import * as React from "react";
 import 'react-native';
 // Note: test renderer must be required after react-native.
 import renderer from 'react-test-renderer';
-import * as React from "react";
+
 import App from "../src/App";
-import Pager from "../src/Pager";
+import Pager from "../src/components/Pager";
 
 jest.mock('../src/Pager', () => {
   return jest.fn().mockImplementation(() => {

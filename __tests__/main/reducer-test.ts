@@ -1,8 +1,9 @@
-import { main, Situation, Stage } from "../../src/main/reducer";
-import { breakUp, loseJob, makeWorry, neglect } from "../../src/main/actions";
-import { takeSnapshot } from "../utils"
-import { MainState } from "../../src/main/interface"
 import { AnyAction } from "redux"
+
+import { main, Situation, Stage } from "../../src/reducers/main";
+import { breakUp, loseJob, makeWorry, neglect } from "../../src/actions/main";
+import { takeSnapshot } from "../utils"
+import { MainState } from "../../src/types/main"
 
 describe('main', () => {
   takeSnapshot<MainState, AnyAction>({

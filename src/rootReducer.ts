@@ -1,7 +1,8 @@
 import { combineReducers } from "redux";
+
+import { MainState } from "./types/main";
+import { TimerState } from "./types/timer";
 import { main } from "./reducers/main";
-import { MainState } from "./main/interface";
-import { TimerState } from "./timer/interface";
 import { timer } from "./reducers/timer";
 
 export interface RootState {
