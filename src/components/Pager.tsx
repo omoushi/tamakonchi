@@ -6,7 +6,7 @@ import Collection from "./Collection";
 import { createStackNavigator, createAppContainer } from 'react-navigation';
 import { RootState } from "../reducers";
 import { TimerState, TimerEvents } from "../timer/interface";
-import { moreTool } from "../timer/actions";
+import { moreTool } from "../actions/timer";
 import { Action, Dispatch } from "redux";
 
 

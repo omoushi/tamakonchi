@@ -1,6 +1,6 @@
 import { MainState, MainStateEvent } from "../main/interface";
 import { Action, Reducer } from "redux";
-import { ActionType } from "../main/actions";
+import { ActionType } from "../actions/main";
 
 export enum Stage {
   NORMAL = '通常',
