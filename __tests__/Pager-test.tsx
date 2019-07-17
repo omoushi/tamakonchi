@@ -1,11 +1,11 @@
+import * as React from "react";
+import { createStore } from 'redux';
+import { Provider } from 'react-redux';
 import 'react-native';
 // Note: test renderer must be required after react-native.
 import renderer from 'react-test-renderer';
-import * as React from "react";
-import reducer from "../src/reducers";
-import Pager from  '../src/Pager';
-import { createStore } from 'redux';
-import { Provider } from 'react-redux';
+import reducer from "../src/rootReducer";
+import Pager from  '../src/components/Pager';
 
 import {
   NavigationContainer,

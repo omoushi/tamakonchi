@@ -1,6 +1,7 @@
-import {TimerState, TimerStateEvent, Tool } from "./interface";
 import {Action, Reducer} from "redux";
-import {ActionType} from "./actions";
+
+import {TimerState, TimerStateEvent, Tool } from "../types/timer";
+import {ActionType} from "../actions/timer";
 
 const moreTool = (state: TimerState): TimerStateEvent => {
   const item: Tool = {
