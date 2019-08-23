@@ -9,7 +9,7 @@
     "test:ci": "jest --runInBand"
   },
   "dependencies": {
-    "react": "16.8.6",
+    "react": "16.9.0",
     "react-native": "0.59.10",
     "react-native-gesture-handler": "^1.2.1",
     "react-navigation": "^3.9.1"
@@ -32,7 +32,7 @@
     "jest": "^24.7.1",
     "metro-react-native-babel-preset": "^0.56.0",
     "react-redux": "^7.0.3",
-    "react-test-renderer": "16.8.6",
+    "react-test-renderer": "16.9.0",
     "redux": "^4.0.1",
     "typescript": "^3.4.2",
     "yarn": "^1.17.3"
