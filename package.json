@@ -9,7 +9,7 @@
     "test:ci": "jest --runInBand"
   },
   "dependencies": {
-    "react": "16.9.0",
+    "react": "16.10.1",
     "react-native": "0.59.10",
     "react-native-gesture-handler": "^1.2.1",
     "react-navigation": "^3.9.1"
